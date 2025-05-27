@@ -1,0 +1,19 @@
+/* Estilos para pantalla */
+body {
+  width: 29.7cm; /* Ancho A4 en milímetros */
+  height: 21.0cm; /* Alto A4 en milímetros */
+  margin: 0 auto; /* Centrar el contenido horizontalmente */
+  padding: 1cm; /* Espacio interno */
+  background-color: white; /* Fondo blanco */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1); /* Sombra para simular una hoja en pantalla */
+}
+
+/* Estilos específicos para impresión */
+@media print {
+  body {
+    margin: 0; /* Eliminar márgenes al imprimir */
+    padding: 0; /* Eliminar padding al imprimir */
+    box-shadow: none; /* Eliminar sombra al imprimir */
+    background-color: white; /* Fondo blanco para impresión */
+  }
+}
