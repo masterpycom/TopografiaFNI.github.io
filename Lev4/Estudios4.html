@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Fórmulas en LaTeX</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <style>
+        /* Configuración general para impresión */
+        @page {
+            size: letter; /* Tamaño carta estándar */
+            margin: 2.5cm; /* Márgenes de 2.5 cm (ajustables) */
+        }
+
+        body {
+            font-family: "Times New Roman", serif;
+            font-size: 12pt;
+            line-height: 1.5;
+            color: #000;
+            max-width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        /* Evitar saltos de página dentro de secciones */
+        h1, h2, h3 {
+            page-break-after: avoid;
+        }
+
+        /* Botón de impresión (solo visible en pantalla) */
+        #printButton {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            padding: 10px 15px;
+            background: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+        }
+
+        #printButton:hover {
+            background: #3498db;
+        }
+
+        /* Ocultar botón al imprimir */
+        @media print {
+            #printButton {
+                display: none;
+            }
+        }
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 2em; }
+        h1 { font-size: 1.8em; color: red; border-bottom: 2px solid #3498db; padding-bottom: 5px; }
+        h2 { font-size: 1.5em; color: magenta; margin-top: 1.5em; }
+        h3 { font-size: 1.3em; color: blue; margin-top: 1em; }
+    </style>
+</head>
+<body>
+    <h1>LEVANTAMIENTO CON CINTA JALON</h1>
+    <h1>INDICE:</h1>
+
+<h1>INTRODUCCIÓN:</h1>
+La taquimetría es un método de levantamiento topográfico que permite medir simultáneamente ángulos y distancias para determinar la posición planimétrica y altimétrica de puntos en un terreno. Es ampliamente utilizado en trabajos de ingeniería, arquitectura y cartografía por su eficiencia y precisión moderada.
+<h1>OBJETIVOS:</h1>
+
+<h2>OBJETIVO GENERAL:</h2>
+Realizar un levantamiento taquimétrico completo de un terreno determinado, utilizando teodolito y mira, para obtener datos precisos que permitan la elaboración de planos topográficos con curvas de nivel y detalles del terreno.
+<h2>OBJETIVO ESPECIFICO:</h2>
+<ul>
+    <li>Medición de ángulos horizontales (azimutes) y verticales (cenitales o de inclinación).</li>
+    <li>Examinar la evolución histórica de la brújula, desde sus orígenes hasta su desarrollo tecnológico moderno.</li>
+    <li>Procesamiento de datos para obtener coordenadas y corrección de errores de cierre.</li>
+</ul>
+<h1>MARCO TEÓRICO:</h1>
+
+<ul>
+    <li>a) Elementos necesarios</li>
+    <li>b) Tipos de Miras</li>
+    Instrumento de medición vertical, plegable en secciones, fabricado en madera, fibra de vidrio o aluminio. Cuenta con escala métrica (tipo E franjas rojas/negras de 1 cm) para lecturas precisas con teodolitos o niveles. Ideal para transporte fácil y mediciones en campo.
+    <li>c) Taquimetría de Mira Horizontal o Estadía Invar</li>
+    Método de alta precisión que emplea mira horizontal con aleación invar (baja dilatación térmica), requiriendo mediciones recíprocas (posición directa e invertida) para eliminar errores sistemáticos del instrumento. 
+    <li>d) Taquimetría Tangencial</li>
+    Técnica alternativa que utiliza únicamente ángulos verticales extremos (superior e inferior) sobre la mira para calcular distancias, aplicable cuando obstáculos impiden la lectura del hilo medio o en pendientes pronunciadas.  
+    <li>e) Taquimetría Estadimetrica o de Mira Vertical</li>
+    Método estándar basado en lectura simultánea de hilos estadimétricos (superior, medio, inferior) y ángulos verticales, aplicando la fórmula:  
+    $$ D = K \cdot (HS - HI) \cdot \cos^2(\alpha) $$
+    donde \( K \) = constante estadimétrica (generalmente 100).  
+    <li>f) Lectura de hilos en la mira vertical</li>
+    Proceso sistemático de registro de:  
+    - \textit{Hilo Superior (HS)} y \textit{Hilo Inferior (HI)} para cálculo de intervalos,
+    - \textit{Hilo Medio (HM)} como referencia de altura instrumental,
+    con precisión típica de ±1 mm en condiciones normales. 
+    <li>g) Numero Generador</li>
+    Constante instrumental (\( K \)) que relaciona la distancia con el intervalo leído en la mira. Se verifica mediante:  
+    \[ K = \frac{D}{(HS - HI)} \]  
+    para distancias conocidas, con valor teórico de 100 en instrumentos bien calibrados. 
+    <li>h) Planimetría</li>
+    Componente del levantamiento que determina coordenadas horizontales (\( X, Y \)) mediante:  
+    - Medición de ángulos horizontales (azimutes),\\  
+    - Cálculo de distancias reducidas al horizonte,\\  
+    - Aplicación de fórmulas de transformación polar a coordenadas rectangulares.\\ 
+    <li>i) Nivelación trigonométrica</li>
+    Método para determinar desniveles (\( \Delta Z \)) mediante ángulos verticales y distancias inclinadas, aplicando:  
+    \[ \Delta Z = D \cdot \tan(\alpha) + hi - hm \]  
+    con correcciones por curvatura terrestre y refracción atmosférica en largas distancias. 
+</ul>
+
+
+<h1>RESUMEN DE TRABAJO DE CAMPO:</h1>
+<h1>PLANILLA DE CAMPO EN LIMPIO:</h1>
+<h1>CALCULOS:</h1>
+    Para el ángulo vertical P2
+$$\measuredangle V_{C.I.} = 91^{\circ} 15' 0.0'' \qquad \measuredangle V_{C.D.} = 268^{\circ} 45' 0.0''$$
+$$\measuredangle V = 91^{\circ} 15' 0.0'' + 268^{\circ} 45' 0.0'' = 360^{\circ} 0' 0.0'' Cumple$$
+$$e = 360^{\circ} 0' 0''-360^{\circ} 0' 0.0'' = 0^{\circ} 0' 0.0''$$
+$$f_c = \frac{0.0}{2} = 0.000$$
+$$\measuredangle V_{C.I._{Corr.}} = \measuredangle V_{C.I.} + C = 91^{\circ} 15' 0.0'' + (0^{\circ} 0' 0.0'') = 91^{\circ} 15' 0.0''$$
+$$\measuredangle V_{C.D._{Corr.}} = \measuredangle V_{C.D.} + C = 268^{\circ} 45' 0.0'' + (0^{\circ} 0' 0.0'') = 268^{\circ} 45' 0.0''$$
+Verificando:
+$$\measuredangle V_{C.I._{Corr.}} + \measuredangle V_{C.D._{Corr.}} = 360^{\circ} 0' 0'' \qquad 91^{\circ} 15' 0.0'' + 268^{\circ} 45' 0.0'' = 360^{\circ} 0' 0.0''$$
+Finalmente:
+$$\measuredangle V_{1} = 90^{\circ} 0' 0'' - \measuredangle V_{C.I._{Corr}} = 90^{\circ} 0' 0'' - 91^{\circ} 15' 0.0'' = -1^{\circ} 15' 0.0''$$
+Para el ángulo vertical P3
+$$\measuredangle V_{C.I.} = 93^{\circ} 35' 0.0'' \qquad \measuredangle V_{C.D.} = 266^{\circ} 23' 60.0''$$
+$$\measuredangle V = 93^{\circ} 35' 0.0'' + 266^{\circ} 23' 60.0'' = 360^{\circ} 0' 0.0'' \texcolor{red}{Cumple}$$
+$$e = 360^{\circ} 0' 0''-360^{\circ} 0' 0.0'' = 0^{\circ} 0' 0.0''$$
+$$f_c = \frac{0.0}{2} = 0.000$$
+$$\measuredangle V_{C.I._{Corr.}} = \measuredangle V_{C.I.} + C = 93^{\circ} 35' 0.0'' + (0^{\circ} 0' 0.0'') = 93^{\circ} 35' 0.0''$$
+$$\measuredangle V_{C.D._{Corr.}} = \measuredangle V_{C.D.} + C = 266^{\circ} 23' 60.0'' + (0^{\circ} 0' 0.0'') = 266^{\circ} 23' 60.0''$$
+Verificando:
+$$\measuredangle V_{C.I._{Corr.}} + \measuredangle V_{C.D._{Corr.}} = 360^{\circ} 0' 0'' \qquad 93^{\circ} 35' 0.0'' + 266^{\circ} 23' 60.0'' = 360^{\circ} 0' 0.0''$$
+Finalmente:
+$$\measuredangle V_{2} = 90^{\circ} 0' 0'' - \measuredangle V_{C.I._{Corr}} = 90^{\circ} 0' 0'' - 93^{\circ} 35' 0.0'' = -3^{\circ} 35' 60.0''$$
+\textcolor{blue}{Para el ángulo vertical P1}
+$$\measuredangle V_{C.I.} = 88^{\circ} 58' 0.0'' \qquad \measuredangle V_{C.D.} = 271^{\circ} 2' 0.0''$$
+$$\measuredangle V = 88^{\circ} 58' 0.0'' + 271^{\circ} 2' 0.0'' = 360^{\circ} 0' 0.0'' \texcolor{red}{Cumple}$$
+$$e = 360^{\circ} 0' 0''-360^{\circ} 0' 0.0'' = 0^{\circ} 0' 0.0''$$
+$$f_c = \frac{0.0}{2} = 0.000$$
+$$\measuredangle V_{C.I._{Corr.}} = \measuredangle V_{C.I.} + C = 88^{\circ} 58' 0.0'' + (0^{\circ} 0' 0.0'') = 88^{\circ} 58' 0.0''$$
+$$\measuredangle V_{C.D._{Corr.}} = \measuredangle V_{C.D.} + C = 271^{\circ} 2' 0.0'' + (0^{\circ} 0' 0.0'') = 271^{\circ} 2' 0.0''$$
+Verificando:
+$$\measuredangle V_{C.I._{Corr.}} + \measuredangle V_{C.D._{Corr.}} = 360^{\circ} 0' 0'' \qquad 88^{\circ} 58' 0.0'' + 271^{\circ} 2' 0.0'' = 360^{\circ} 0' 0.0''$$
+Finalmente:
+$$\measuredangle V_{3} = 90^{\circ} 0' 0'' - \measuredangle V_{C.I._{Corr}} = 90^{\circ} 0' 0'' - 88^{\circ} 58' 0.0'' = 1^{\circ} 1' 60.0''$$
+</body>
+</html>
