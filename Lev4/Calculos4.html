@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Fórmulas en LaTeX</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <style>
+        @page {
+            size: letter; /* Tamaño carta estándar */
+            margin: 2.5cm; /* Márgenes de 2.5 cm (ajustables) */
+        }
+
+        body {
+            font-family: "Times New Roman", serif;
+            font-size: 12pt;
+            line-height: 1.5;
+            color: #000;
+            max-width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        h1, h2, h3 {
+            page-break-after: avoid;
+        }
+
+        #printButton {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            padding: 10px 15px;
+            background: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+        }
+
+        #printButton:hover {
+            background: #3498db;
+        }
+        @media print {
+            #printButton {
+                display: none;
+            }
+        }
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 2em; }
+        h1 { font-size: 1.8em; color: red; border-bottom: 2px solid #3498db; padding-bottom: 5px; }
+        h2 { font-size: 1.5em; color: magenta; margin-top: 1.5em; }
+        h3 { font-size: 1.3em; color: blue; margin-top: 1em; }
+    </style>
+</head>
+<body>
+<h1>CALCULOS</h1>
+
+	<li> i. Calculo de los Ángulos Horizontales</li>
+	Se tiene como datos de la planilla de campo los ángulos horizontales:
+    <table border="1" cellspacing="0" cellpadding="5">
+  <thead>
+    <tr>
+      <th>P.A</th>
+      <th>P.I.</th>
+      <th>P.Adel</th>
+      <th>CI</th>
+      <th>CD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>D</td>
+      <td>A</td>
+      <td>B</td>
+      <td>$$75^{\circ} 54' 10.0''$$</td>
+      <td>$$150^{\circ} 30' 10.0'' $$</td>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>B</td>
+      <td>C</td>
+      <td>$$100^{\circ} 41' 10.0''$$</td>
+      <td>$$201^{\circ} 22' 21.0''$$ </td>
+    </tr>
+    <tr>
+      <td>B</td>
+      <td>C</td>
+      <td>D</td>
+      <td>$$96^{\circ} 35' 10.0''$$</td>
+      <td>$$193^{\circ} 10' 20.0''$$ </td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>D</td>
+      <td>A</td>
+      <td>$$177^{\circ} 31' 0.0''$$</td>
+      <td>$$75^{\circ} 54' 10.0'' $$</td>
+    </tr>
+  </tbody>
+</table>
+    Las lecturas realizadas con un teodolito reiterador, por lo cual al Circulo Derecho se le restara $$180^{\circ}$$:
+	Para el ángulo 1
+$$\measuredangle H_{C.I.} = 75^{\circ} 54' 10.0''$$
+$$\measuredangle H_{C.D.} = \frac{-29^{\circ} 29' 50.0''}{2} = -29^{\circ} 29' 50.0''$$
+$$\hat{1} = \measuredangle H_{A-B} = \frac{75^{\circ} 54' 10.0''+-29^{\circ} 29' 50.0''}{2} = 23^{\circ} 12' 10.0''$$Para el ángulo 2
+$$\measuredangle H_{C.I.} = 100^{\circ} 41' 10.0''$$
+$$\measuredangle H_{C.D.} = \frac{21^{\circ} 22' 21.0''}{2} = 21^{\circ} 22' 21.0''$$
+$$\hat{2} = \measuredangle H_{B-C} = \frac{100^{\circ} 41' 10.0''+21^{\circ} 22' 21.0''}{2} = 61^{\circ} 1' 45.5''$$Para el ángulo 3
+$$\measuredangle H_{C.I.} = 96^{\circ} 35' 10.0''$$
+$$\measuredangle H_{C.D.} = \frac{13^{\circ} 10' 20.0''}{2} = 13^{\circ} 10' 20.0''$$
+$$\hat{3} = \measuredangle H_{C-D} = \frac{96^{\circ} 35' 10.0''+13^{\circ} 10' 20.0''}{2} = 54^{\circ} 52' 45.0''$$Para el ángulo 4
+$$\measuredangle H_{C.I.} = 177^{\circ} 31' 0.0''$$
+$$\measuredangle H_{C.D.} = \frac{-104^{\circ} 5' 50.0''}{2} = -104^{\circ} 5' 50.0''$$
+$$\hat{4} = \measuredangle H_{D-A} = \frac{177^{\circ} 31' 0.0''+-104^{\circ} 5' 50.0''}{2} = 36^{\circ} 43' 5.0''$$
+	<li> ii. Corrección de Ángulos Horizontales</li>
+	$$\sum \measuredangle H_{Int.Cal.} =  23^{\circ} 12' 10.0'' + 61^{\circ} 1' 45.5'' + 54^{\circ} 52' 45.0'' + 36^{\circ} 43' 5.0''$$
+	<li> iii. Condición Geométrica de Ángulos para Polígonos</li>
+	$$\sum \measuredangle H_{Int.} = 180^{\circ}(n-2) \qquad donde: \quad n=4 \qquad \sum \measuredangle H_{Int.} = 180^{\circ}(4-2)$$
+	$$\sum \measuredangle H_{Int.} = 360^{\circ} 0' 0''$$
+	<li> iv. Error</li>
+	$$e = \sum \measuredangle Int. \sum \measuredangle H_{Int.Cal.} \qquad e=360^{\circ} 0' 0''-175^{\circ} 49' 45.5'' = 184^{\circ} 10' 14.5''$$
+	<li> v. Corrección</li>
+	$$f_C = \frac{e}{\sharp \measuredangle Horz.} \qquad f_C = \frac{184^{\circ} 10' 14.5''}{4} = 46^{\circ} 2' 33.625''$$
+	$$\measuredangle H_{0C} = \measuredangle H_{0} + f_C = 23^{\circ} 12' 10.0'' + 46^{\circ} 2' 33.625'' = 69^{\circ} 14' 43.625''$$$$\measuredangle H_{1C} = \measuredangle H_{1} + f_C = 61^{\circ} 1' 45.5'' + 46^{\circ} 2' 33.625'' = 107^{\circ} 4' 19.125''$$$$\measuredangle H_{2C} = \measuredangle H_{2} + f_C = 54^{\circ} 52' 45.0'' + 46^{\circ} 2' 33.625'' = 100^{\circ} 55' 18.625''$$$$\measuredangle H_{3C} = \measuredangle H_{3} + f_C = 36^{\circ} 43' 5.0'' + 46^{\circ} 2' 33.625'' = 82^{\circ} 45' 38.625''$$
+	Verificación:
+	$$\sum \measuredangle = 69^{\circ} 14' 43.625'' + 107^{\circ} 4' 19.125'' + 100^{\circ} 55' 18.625'' + 82^{\circ} 45' 38.625'' = 360^{\circ} 0' 0.0''$$
+	<li> vi. Precisión Angular</li>
+	<table border="1" cellspacing="0" cellpadding="5">
+  <thead>
+    <tr>
+      <th>Nº DE ORDEN</th>
+      <th>PRECISIÓN ANGULAR</th>
+      <th>Calculado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1º</td>
+      <td>$$30'' \times \sqrt{N}$$</td>
+      <td>$$0^{\circ} 0' 30.0'' \times \sqrt{4} = 0^{\circ} 1' 0.0''$$</td>
+    </tr>
+    <tr>
+      <td>2º</td>
+      <td>$$60'' \times \sqrt{N}$$</td>
+      <td>$$0^{\circ} 1' 0.0'' \times \sqrt{4} = 0^{\circ} 2' 0.0''$$</td>
+    </tr>
+    <tr>
+      <td>3º</td>
+      <td>$$90'' \times \sqrt{N}$$</td>
+      <td>$$0^{\circ} 1' 30.0'' \times \sqrt{4} = 0^{\circ} 3' 0.0''$$</td>
+    </tr>
+    <tr>
+      <td>4º</td>
+      <td>$$120'' \times \sqrt{N}$$</td>
+      <td>$$0^{\circ} 2' 0.0'' \times \sqrt{4} = 0^{\circ} 4' 0.0''$$</td>
+    </tr>
+  </tbody>
+</table>
+     \fbox{No esta en el rango aceptable {$$184^{\circ} 10' 14.5''$$}} 
+	<li> vii. Calculo de los Ángulos Verticales</li>
+	Se tiene como datos de la planilla de campo:
+	<table border="1" cellspacing="0" cellpadding="5">
+  <thead>
+    <tr>
+      <th>P.A</th>
+      <th>P.I.</th>
+      <th>P.Adel</th>
+      <th>CI</th>
+      <th>CD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>D</td>
+      <td>A</td>
+      <td>B</td>
+      <td>$$84^{\circ} 58' 10.0''$$</td>
+      <td>$$275^{\circ} 1' 20.0''$$</td>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>B</td>
+      <td>C</td>
+      <td>$$88^{\circ} 53' 10.0''$$</td>
+      <td>$$271^{\circ} 6' 51.0''$$</td>
+    </tr>
+    <tr>
+      <td>B</td>
+      <td>C</td>
+      <td>D</td>
+      <td>$$94^{\circ} 15' 30.0''$$</td>
+      <td>$$266^{\circ} 10' 0.0''$$</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>D</td>
+      <td>A</td>
+      <td>$$93^{\circ} 3' 40.0''$$</td>
+      <td>$$266^{\circ} 56' 20.0''$$</td>
+    </tr>
+  </tbody>
+</table>
+    Para el ángulo vertical B
+$$\measuredangle V_{C.I.} = 84^{\circ} 58' 10.0'' \qquad \measuredangle V_{C.D.} = 275^{\circ} 1' 20.0''$$
+$$\measuredangle V = 84^{\circ} 58' 10.0'' + 275^{\circ} 1' 20.0'' = 359^{\circ} 59' 30.0'' {Cumple}$$
+$$e = 360^{\circ} 0' 0''-359^{\circ} 59' 30.0'' = 0^{\circ} 0' 30.0''$$
+$$f_c = \frac{0^{\circ} 0' 30.0''}{2} = 0^{\circ} 0' 15.0''$$
+$$\measuredangle V_{C.I._{Corr.}} = \measuredangle V_{C.I.} + C = 84^{\circ} 58' 10.0'' + (0^{\circ} 0' 15.0'') = 84^{\circ} 58' 25.0''$$
+$$\measuredangle V_{C.D._{Corr.}} = \measuredangle V_{C.D.} + C = 275^{\circ} 1' 20.0'' + (0^{\circ} 0' 15.0'') = 275^{\circ} 1' 35.0''$$
+Verificando:
+$$\measuredangle V_{C.I._{Corr.}} + \measuredangle V_{C.D._{Corr.}} = 360^{\circ} 0' 0'' \qquad 84^{\circ} 58' 25.0'' + 275^{\circ} 1' 35.0'' = 360^{\circ} 0' 0.0''$$
+Finalmente:
+$$\measuredangle V_{1} = 90^{\circ} 0' 0'' - \measuredangle V_{C.I._{Corr}} = 90^{\circ} 0' 0'' - 84^{\circ} 58' 25.0'' = 5^{\circ} 1' 35.0''$$Para el ángulo vertical C
+$$\measuredangle V_{C.I.} = 88^{\circ} 53' 10.0'' \qquad \measuredangle V_{C.D.} = 271^{\circ} 6' 51.0''$$
+$$\measuredangle V = 88^{\circ} 53' 10.0'' + 271^{\circ} 6' 51.0'' = 360^{\circ} 0' 1.0'' {Cumple}$$
+$$e = 360^{\circ} 0' 0''-360^{\circ} 0' 1.0'' = -0^{\circ} 0' 1.0''$$
+$$f_c = \frac{-0^{\circ} 0' 1.0''}{2} = -0^{\circ} 0' 0.5''$$
+$$\measuredangle V_{C.I._{Corr.}} = \measuredangle V_{C.I.} + C = 88^{\circ} 53' 10.0'' + (-0^{\circ} 0' 0.5'') = 88^{\circ} 53' 9.5''$$
+$$\measuredangle V_{C.D._{Corr.}} = \measuredangle V_{C.D.} + C = 271^{\circ} 6' 51.0'' + (-0^{\circ} 0' 0.5'') = 271^{\circ} 6' 50.5''$$
+Verificando:
+$$\measuredangle V_{C.I._{Corr.}} + \measuredangle V_{C.D._{Corr.}} = 360^{\circ} 0' 0'' \qquad 88^{\circ} 53' 9.5'' + 271^{\circ} 6' 50.5'' = 360^{\circ} 0' 0.0''$$
+Finalmente:
+$$\measuredangle V_{2} = 90^{\circ} 0' 0'' - \measuredangle V_{C.I._{Corr}} = 90^{\circ} 0' 0'' - 88^{\circ} 53' 9.5'' = 1^{\circ} 6' 50.5''$$Para el ángulo vertical D
+$$\measuredangle V_{C.I.} = 94^{\circ} 15' 30.0'' \qquad \measuredangle V_{C.D.} = 266^{\circ} 10' 0.0''$$
+$$\measuredangle V = 94^{\circ} 15' 30.0'' + 266^{\circ} 10' 0.0'' = 360^{\circ} 25' 30.0'' {Cumple}$$
+$$e = 360^{\circ} 0' 0''-360^{\circ} 25' 30.0'' = -0^{\circ} 25' 30.0''$$
+$$f_c = \frac{-0^{\circ} 25' 30.0''}{2} = -0^{\circ} 12' 45.0''$$
+$$\measuredangle V_{C.I._{Corr.}} = \measuredangle V_{C.I.} + C = 94^{\circ} 15' 30.0'' + (-0^{\circ} 12' 45.0'') = 94^{\circ} 2' 45.0''$$
+$$\measuredangle V_{C.D._{Corr.}} = \measuredangle V_{C.D.} + C = 266^{\circ} 10' 0.0'' + (-0^{\circ} 12' 45.0'') = 265^{\circ} 57' 15.0''$$
+Verificando:
+$$\measuredangle V_{C.I._{Corr.}} + \measuredangle V_{C.D._{Corr.}} = 360^{\circ} 0' 0'' \qquad 94^{\circ} 2' 45.0'' + 265^{\circ} 57' 15.0'' = 360^{\circ} 0' 0.0''$$
+Finalmente:
+$$\measuredangle V_{3} = 90^{\circ} 0' 0'' - \measuredangle V_{C.I._{Corr}} = 90^{\circ} 0' 0'' - 94^{\circ} 2' 45.0'' = -4^{\circ} 2' 45.0''$$Para el ángulo vertical A
+$$\measuredangle V_{C.I.} = 93^{\circ} 3' 40.0'' \qquad \measuredangle V_{C.D.} = 266^{\circ} 56' 20.0''$$
+$$\measuredangle V = 93^{\circ} 3' 40.0'' + 266^{\circ} 56' 20.0'' = 360^{\circ} 0' 0.0'' {Cumple}$$
+$$e = 360^{\circ} 0' 0''-360^{\circ} 0' 0.0'' = 0^{\circ} 0' 0.0''$$
+$$f_c = \frac{0^{\circ} 0' 0.0''}{2} = 0^{\circ} 0' 0.0''$$
+$$\measuredangle V_{C.I._{Corr.}} = \measuredangle V_{C.I.} + C = 93^{\circ} 3' 40.0'' + (0^{\circ} 0' 0.0'') = 93^{\circ} 3' 40.0''$$
+$$\measuredangle V_{C.D._{Corr.}} = \measuredangle V_{C.D.} + C = 266^{\circ} 56' 20.0'' + (0^{\circ} 0' 0.0'') = 266^{\circ} 56' 20.0''$$
+Verificando:
+$$\measuredangle V_{C.I._{Corr.}} + \measuredangle V_{C.D._{Corr.}} = 360^{\circ} 0' 0'' \qquad 93^{\circ} 3' 40.0'' + 266^{\circ} 56' 20.0'' = 360^{\circ} 0' 0.0''$$
+Finalmente:
+$$\measuredangle V_{4} = 90^{\circ} 0' 0'' - \measuredangle V_{C.I._{Corr}} = 90^{\circ} 0' 0'' - 93^{\circ} 3' 40.0'' = -3^{\circ} 3' 40.0''$$
+	<li> viii. Calculo de Azimuts</li>
+	Utilizando la formula:
+	$$Az_{Nuevo} = Az_{Antes} + \measuredangle Horz \pm 180^{\circ}$$
+	$$Az_{A-B} = 143^{\circ} 50' 0.0'' + 69^{\circ} 14' 43.625'' - 180^{\circ} 0' 0'' = 33^{\circ} 5' 43.625''$$
+$$Az_{B-C} = 213^{\circ} 5' 43.625'' + 107^{\circ} 4' 19.125'' - 180^{\circ} 0' 0'' = 140^{\circ} 10' 2.75''$$
+$$Az_{C-D} = 320^{\circ} 10' 2.75'' + 100^{\circ} 55' 18.625'' - 180^{\circ} 0' 0'' = 241^{\circ} 5' 21.375''$$
+$$Az_{D-A} = 421^{\circ} 5' 21.375'' + 82^{\circ} 45' 38.625'' - 180^{\circ} 0' 0'' = 323^{\circ} 51' 0.0''$$
+
+	No cumple con la condición $$Az_{D-A} = 323^{\circ} 51' 0.0''$$
+	<li> ix. Calculo del Numero Generador “NG”</li>
+	<table border="1" cellspacing="0" cellpadding="5">
+  <thead>
+    <tr>
+      <th>P.A</th>
+      <th>P.I.</th>
+      <th>P.Adel</th>
+      <th>L.H.I.</th>
+      <th>L.H.A.</th>
+      <th>L.H.S.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>D</td>
+      <td>A</td>
+      <td>B</td>
+      <td>1</td>
+      <td>1.232</td>
+      <td>1.462</td>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>B</td>
+      <td>C</td>
+      <td>1.311</td>
+      <td>1.5</td>
+      <td>1.685</td>
+    </tr>
+    <tr>
+      <td>B</td>
+      <td>C</td>
+      <td>D</td>
+      <td>0.788</td>
+      <td>1</td>
+      <td>1.212</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>D</td>
+      <td>A</td>
+      <td>0.75</td>
+      <td>1</td>
+      <td>1.252</td>
+    </tr>
+  </tbody>
+</table>
+    Se tiene la expresión: $$NG_{PTO.EST.-PTO.ADEL} = 100(HS-HI)$$
+    $$NG_{D-A} = 100 \times (1.462 - 1) = 46.200$$$$NG_{A-B} = 100 \times (1.685 - 1.311) = 37.400$$$$NG_{B-C} = 100 \times (1.212 - 0.788) = 42.400$$$$NG_{C-D} = 100 \times (1.252 - 0.75) = 50.200$$
+	<li> x. Calculo de Distancias Horizontales</li>
+	Se calculara con la expresión: $$DH_{PTO.EST.-PTO.ADEL} = NG \times \cos^2{(\measuredangle V_{PTO.EST.-PTO.ADEL.})}$$
+	$$DH_{A-B} = 46.200\times \cos^2{(5^{\circ} 1' 35.0'')} = 45.845$$$$DH_{B-C} = 37.400\times \cos^2{(1^{\circ} 6' 50.5'')} = 37.386$$$$DH_{C-D} = 42.400\times \cos^2{(-4^{\circ} 2' 45.0'')} = 42.189$$$$DH_{D-A} = 50.200\times \cos^2{(-3^{\circ} 3' 40.0'')} = 50.057$$
+	<li> xi. Calculo de Distancias Verticales</li>
+	Se calculara con la expresión: $$DV_{PTO.EST.-PTO.ADEL} = \frac{1}{2}NG\times \sin{(2\times \measuredangle V_{PTO.EST.-PTO.ADEL.})}$$
+	$$DV_{A-B} = \frac{1}{2}\times 46.200 \times \sin{(2 \times (5^{\circ} 1' 35.0'') )} = 4.032$$$$DV_{B-C} = \frac{1}{2}\times 37.400 \times \sin{(2 \times (1^{\circ} 6' 50.5'') )} = 0.727$$$$DV_{C-D} = \frac{1}{2}\times 42.400 \times \sin{(2 \times (-4^{\circ} 2' 45.0'') )} = -2.984$$$$DV_{D-A} = \frac{1}{2}\times 50.200 \times \sin{(2 \times (-3^{\circ} 3' 40.0'') )} = -2.677$$
+	<li> xii. Coordenadas Parciales</li>
+	$$\Delta N_{P_i} = DH_{i} \times \cos{(Az_{i})}$$
+	$$\Delta N_{B} = 50.057 \times \cos{(323^{\circ} 51' 0.0'')} = 37.019  \qquad \Delta E_{B} = 50.057 \times \sin{(323^{\circ} 51' 0.0'')} = 37.019$$$$\Delta N_{C} = 50.057 \times \cos{(323^{\circ} 51' 0.0'')} = 31.320  \qquad \Delta E_{C} = 50.057 \times \sin{(323^{\circ} 51' 0.0'')} = 31.320$$$$\Delta N_{D} = 50.057 \times \cos{(323^{\circ} 51' 0.0'')} = -32.398  \qquad \Delta E_{D} = 50.057 \times \sin{(323^{\circ} 51' 0.0'')} = -32.398$$$$\Delta N_{A} = 50.057 \times \cos{(323^{\circ} 51' 0.0'')} = -24.200  \qquad \Delta E_{A} = 50.057 \times \sin{(323^{\circ} 51' 0.0'')} = -24.200$$
+	Obtención del ERROR:
+	$$e_N = -1\times\left[(37.019) + (31.320) + (-32.398) + (-24.200)\right] = -11.742$$
+	$$e_E = -1\times\left[(-27.044) + (20.414) + (27.024) + (-43.818)\right] = 23.425$$
+	<li> xiii. Determinación del Error Lineal Total y Precisión Lineal</li>
+	$$E.L.T. = \sqrt{e_N^2 + e_E^2} = \sqrt{(-11.742)^2 + (23.425)^2} = 26.203$$
+	$$P.L. = \frac{\sum NG}{E.L.T.} = \frac{46.200 + 37.400 + 42.400 + 50.200}{26.203} = 6.724$$
+	<table border="1" cellspacing="0" cellpadding="5">
+  <thead>
+    <tr>
+      <th>Nº DE ORDEN</th>
+      <th>Precisión Lineal</th>
+      <th>Calculado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1º</td>
+      <td>1:5000</td>
+      <td>6.724>5000</td>
+    </tr>
+    <tr>
+      <td>2º</td>
+      <td>1:2000</td>
+      <td>2000<6.724<5000</td>
+    </tr>
+    <tr>
+      <td>3º</td>
+      <td>1:1000</td>
+      <td>1000<6.724<2000</td>
+    </tr>
+    <tr>
+      <td>4º</td>
+      <td>1:333</td>
+      <td>333<6.724<1000</td>
+    </tr>
+  </tbody>
+</table>
+    Para la precisión lineal se tendrá:
+     Volver al trabajo de campo 1<6.724<333
+	<li> xiv. Compensación de Coordenadas por el Método de “TRANSIT RULE”</li>
+	1ro. Cálculo del factor de corrección
+	$$f_{CN} = \frac{e_N}{\sum |\Delta N|} = \frac{-11.742}{(37.019) + (31.320) + (-32.398) + (-24.200)} = -0.094$$
+	$$f_{CE} = \frac{e_E}{\sum |\Delta E|} = \frac{23.425}{(-27.044) + (20.414) + (27.024) + (-43.818)} = 0.198$$
+	2do. El factor de corrección se multiplicará por cada valor del Numero Generador para obtener las correcciones.
+	3ro. Cálculos de las Correcciones
+	$$C_{DN} = -0.094 \times |37.019| = -3.479$$ $$C_{AN} = -0.094 \times |31.320| = -2.944$$ $$C_{BN} = -0.094 \times |-32.398| = -3.045$$ $$C_{CN} = -0.094 \times |-24.200| = -2.274$$
+	$$C_{DN} = 0.198 \times |-27.044| = 5.355$$ $$C_{AN} = 0.198 \times |20.414| = 4.042$$ $$C_{BN} = 0.198 \times |27.024| = 5.351$$ $$C_{CN} = 0.198 \times |-43.818| = 8.676$$
+	4to. Las Correcciones se sumarán en las Coordenadas Parciales para punto.
+	$$C_{DN} = 37.019 + (-3.479) = 33.540$$ $$C_{AN} = 31.320 + (-2.944) = 28.377$$ $$C_{BN} = -32.398 + (-3.045) = -35.443$$ $$C_{CN} = -24.200 + (-2.274) = -26.474$$
+	$$C_{DN} = 37.019 + (-3.479) = -21.689$$ $$C_{AN} = 31.320 + (-2.944) = 24.456$$ $$C_{BN} = -32.398 + (-3.045) = 32.375$$ $$C_{CN} = -24.200 + (-2.274) = -35.142$$
+	<li> xv. Calculo de las Coordenadas Totales</li>
+	Se tiene como datos iniciales y condición del proyecto:
+	Nº Lista = 51
+	$$Norte = 500 \qquad Este = 700$$
+	$$Norte = 500 + (0.1\times N-lista) \qquad Este = 700 + (0.2\times N-lista)$$
+	$$Norte = 500 + 0.1\times 51 \qquad Este = 700 + (0.2\times 51)$$
+	$$Norte = 505.1 \qquad Este = 710.2$$
+	$$Norte_{p1} = 505.1 \qquad Este_{p1} = 710.2$$
+	$$N_{B} = N_{P_{1}} + \Delta N_{B-Corr.} = 505.100 + 33.540 = 538.640 \qquad E_{B} = E_{P_{1}} + \Delta E_{B-Corr.} = 710.200 + -21.689 = 688.511$$$$N_{C} = N_{P_{2}} + \Delta N_{C-Corr.} = 538.640 + 28.377 = 567.017 \qquad E_{C} = E_{P_{2}} + \Delta E_{C-Corr.} = 688.511 + 24.456 = 712.967$$$$N_{D} = N_{P_{3}} + \Delta N_{D-Corr.} = 567.017 + -35.443 = 531.574 \qquad E_{D} = E_{P_{3}} + \Delta E_{D-Corr.} = 712.967 + 32.375 = 745.342$$$$N_{A} = N_{P_{4}} + \Delta N_{A-Corr.} = 531.574 + -26.474 = 505.100 \qquad E_{A} = E_{P_{4}} + \Delta E_{A-Corr.} = 745.342 + -35.142 = 710.200$$
+	<li> xvi. Calculo de las Elevaciones</li>
+	Se tiene como dato inicial y condición del problema:
+	Numero de List = 51
+	$$Elev_{i} = 2300[m.s.n.m.]$$
+	$$Elev_{i} = 2300 + (0.3 \times N-Lista)$$
+	$$Elev_{i} = 2300 + (0.3 \times 51)$$
+	$$Elev_{i} = 2315.300$$
+	$$Elev_{B} = Elev_{P_{1}} + A.I. - A.P. \pm DV_{P_{1}-B} = 2315.300 + 1.450 - 0.656 + (4.032) = 2320.126[m.s.n.m.]$$$$Elev_{C} = Elev_{P_{2}} + A.I. - A.P. \pm DV_{P_{2}-C} = 2320.126 + 1.420 - 0.740 + (0.727) = 2321.533[m.s.n.m.]$$$$Elev_{D} = Elev_{P_{3}} + A.I. - A.P. \pm DV_{P_{3}-D} = 2321.533 + 1.430 - 0.674 + (-2.984) = 2319.305[m.s.n.m.]$$$$Elev_{A} = Elev_{P_{4}} + A.I. - A.P. \pm DV_{P_{4}-A} = 2319.305 + 1.460 - 0.624 + (-2.677) = 2317.464[m.s.n.m.]$$
+	<li> xvii. Calculo del Error de la Elevación</li>
+	$$e_{Elev} = Elev_{PTO.INI} - Elev_{PTO.INI.CALC.}$$
+	$$e_{Elev} = 2317.464 - 2315.300 = 2.164$$
+	<li> xviii. Compensación de Elevaciones por el Método de “TRANSIT RULE”</li>
+	1ro. Calculo de factor de corrección
+	$$f_{C_{Elev}} = \frac{e_{Elev}}{\sum NG} = \frac{2.164}{46.200 + 37.400 + 42.400 + 50.200} = 0.012$$
+	2do. Factor de Corrección se multiplica por cada una de las Distancias Inclinadas para obtener las Correcciones.
+	$$C_{Elev} = f_{C_{Elev}} \times NG$$
+	$$C_{B} = 0.012 \times 46.200 = 0.567$$ $$C_{C} = 0.012 \times 37.400 = 0.459$$ $$C_{D} = 0.012 \times 42.400 = 0.521$$ $$C_{A} = 0.012 \times 50.200 = 0.617$$
+	3ro. Se sumarán las Correcciones a sus respectivas Distancias Verticales
+	$$DV_{Corregido} = DV_i + C_{Elev}$$
+	$$DV_{P_{1}-B-Corr.} = DV_{P_{1-B}} + C_{B-Elev} = -2.677 + 0.567 = 4.600$$ $$DV_{P_{2}-C-Corr.} = DV_{P_{2-C}} + C_{C-Elev} = -2.677 + 0.459 = 1.186$$ $$DV_{P_{3}-D-Corr.} = DV_{P_{3-D}} + C_{D-Elev} = -2.677 + 0.521 = -2.463$$ $$DV_{P_{4}-A-Corr.} = DV_{P_{4-A}} + C_{A-Elev} = -2.677 + 0.617 = -2.060$$
+	4to. Recalculo de las Elevaciones
+	$$Elev_{Nuevo} = Elev_{Anterior} + A.I. - A.P. \pm DV_{Corregido}$$
+	$$Elev_{B-Corr.} = Elev_{P_{1}} + A.I. - A.P. \pm DV_{P_{1}-B-Corr} = 2315.300 + 1.450 - 0.656 + (4.600) = 2320.694$$$$Elev_{C-Corr.} = Elev_{P_{2}} + A.I. - A.P. \pm DV_{P_{2}-C-Corr} = 2320.694 + 1.420 - 0.740 + (1.186) = 2322.560$$$$Elev_{D-Corr.} = Elev_{P_{3}} + A.I. - A.P. \pm DV_{P_{3}-D-Corr} = 2322.560 + 1.430 - 0.674 + (-2.463) = 2320.853$$$$Elev_{A-Corr.} = Elev_{P_{4}} + A.I. - A.P. \pm DV_{P_{4}-A-Corr} = 2320.853 + 1.460 - 0.624 + (-2.060) = 2319.629$$
+	<li> xix. Resumen de resultados (TABLA)</li>
+	\begin{table}[H]
+    \begin{center}
+    \color{gray}
+    \rotatebox{0}{
+    \scalebox{1}{
+        \begin{tabular}{p{0.7cm}p{0.7cm}ccp{4.7cm}p{1.3cm}p{0.8cm}p{0.5cm}p{1cm}}
+    \hline
+    P.A. & P.I. & ANGULO HORIZONTAL & AZIMUTS &  ANGULO VERTICAL & D.I. [m] & A.I. & A.P. & D.V. 
+    \hline
+    & & & 323.850 & & & & & 
+    \end{tabular}
+    }
+    }
+    \rotatebox{0}{
+    \scalebox{1}{
+    \begin{tabular}{ c|c|p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}p{1cm}p{0.8cm}p{0.5cm}p{1cm} }
+    \hline
+    P.A & P.I. & C.I. & C.D. & AZIMUT & C.I. & C.D. & D.I.[m] & A.I. & A.P. & D.V. 
+    \hline
+    D & A & B & $75^{\circ} 54' 10.0''$ & $150^{\circ} 30' 10.0''$ & $84^{\circ} 58' 10.0''$ & $84^{\circ} 58' 10.0''$ & 1 & 1.232 & 1.462 & 1.45  
+A & B & C & $100^{\circ} 41' 10.0''$ & $201^{\circ} 22' 21.0''$ & $88^{\circ} 53' 10.0''$ & $88^{\circ} 53' 10.0''$ & 1.311 & 1.5 & 1.685 & 1.42  
+B & C & D & $96^{\circ} 35' 10.0''$ & $193^{\circ} 10' 20.0''$ & $94^{\circ} 15' 30.0''$ & $94^{\circ} 15' 30.0''$ & 0.788 & 1 & 1.212 & 1.43  
+C & D & A & $177^{\circ} 31' 0.0''$ & $75^{\circ} 54' 10.0''$ & $93^{\circ} 3' 40.0''$ & $93^{\circ} 3' 40.0''$ & 0.75 & 1 & 1.252 & 1.46  
+\hline
+    $\sum$ & & 175.829 & 176.200 & & & &  & & & 
+    \hline
+    \end{tabular}
+    }
+    }
+    \end{center}
+    \caption{RESUMEN}
+    \end{table}
+	<li> xx. Calculo de las Coordenadas de Detalles (TABLA)</li>
+	<li> xxi. Calculo de la escala de la escala del plano</li>
+
+</body>
+</html>
