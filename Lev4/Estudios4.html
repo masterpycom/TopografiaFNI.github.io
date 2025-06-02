@@ -112,38 +112,136 @@ Realizar un levantamiento taquimétrico completo de un terreno determinado, util
 <h1>RESUMEN DE TRABAJO DE CAMPO:</h1>
 <h1>PLANILLA DE CAMPO EN LIMPIO:</h1>
 <h1>CALCULOS:</h1>
+	<li> [] i. Calculo de los Ángulos Horizontales</li>
+	Se tiene como datos de la planilla de campo los ángulos horizontales:
+    Las lecturas realizadas con un teodolito reiterador, por lo cual al Circulo Derecho se le restara $180^{\circ}$:
+	Para el ángulo 1
+$$\measuredangle H_{C.I.} = 92^{\circ} 23' 0.0''$$
+$$\measuredangle H_{C.D.} = \frac{92^{\circ} 21' 0.0''}{2} = 92^{\circ} 21' 0.0''$$
+$$\hat{1} = \measuredangle H_{P1-P2} = \frac{92^{\circ} 23' 0.0''+92^{\circ} 21' 0.0''}{2} = 92^{\circ} 22' 0.0''$$Para el ángulo 2
+$$\measuredangle H_{C.I.} = 46^{\circ} 30' 0.0''$$
+$$\measuredangle H_{C.D.} = \frac{46^{\circ} 30' 0.0''}{2} = 46^{\circ} 30' 0.0''$$
+$$\hat{2} = \measuredangle H_{P3-P3} = \frac{46^{\circ} 30' 0.0''+46^{\circ} 30' 0.0''}{2} = 46^{\circ} 30' 30.0''$$Para el ángulo 3
+$$\measuredangle H_{C.I.} = 41^{\circ} 9' 0.0''$$
+$$\measuredangle H_{C.D.} = \frac{41^{\circ} 9' 0.0''}{2} = 41^{\circ} 9' 0.0''$$
+$$\hat{3} = \measuredangle H_{P3-P1} = \frac{41^{\circ} 9' 0.0''+41^{\circ} 9' 0.0''}{2} = 41^{\circ} 9' 30.0''$$
+	<li> [] ii. Corrección de Ángulos Horizontales</li>
+	$$\sum \measuredangle H_{Int.Cal.} =  92^{\circ} 22' 0.0'' + 46^{\circ} 30' 30.0'' + 41^{\circ} 9' 30.0''$$
+	<li> [] iii. Condición Geométrica de Ángulos para Polígonos</li>
+	$$\sum \measuredangle H_{Int.} = 180^{\circ}(n-2) \qquad donde: \quad n=3 \qquad \sum \measuredangle H_{Int.} = 180^{\circ}(3-2)$$
+	$$\sum \measuredangle H_{Int.} = 180^{\circ} 0' 0''$$
+	<li> [] iv. Error</li>
+	$$e = \sum \measuredangle Int. \sum \measuredangle H_{Int.Cal.} \qquad e=180^{\circ} 0' 0''-180^{\circ} 1' 0.0'' = -0^{\circ} 1' 60.0''$$
+	<li> [] v. Corrección</li>
+	$$f_C = \frac{e}{\sharp \measuredangle Horz.} \qquad f_C = \frac{-0^{\circ} 1' 60.0''}{3} = -0^{\circ} 0' 40.0''$$
+	$$\measuredangle H_{0C} = \measuredangle H_{0} + f_C = 92^{\circ} 22' 0.0'' + -0^{\circ} 0' 40.0'' = 92^{\circ} 21' 20.0''$$$$\measuredangle H_{1C} = \measuredangle H_{1} + f_C = 46^{\circ} 30' 30.0'' + -0^{\circ} 0' 40.0'' = 46^{\circ} 29' 50.0''$$$$\measuredangle H_{2C} = \measuredangle H_{2} + f_C = 41^{\circ} 9' 30.0'' + -0^{\circ} 0' 40.0'' = 41^{\circ} 8' 50.0''$$
+	Verificación:
+	$$\sum \measuredangle = 92^{\circ} 21' 20.0'' + 46^{\circ} 29' 50.0'' + 41^{\circ} 8' 50.0'' = 180^{\circ} 0' 0.0''$$
+	<li> [] vi. Precisión Angular</li>
+
     Para el ángulo vertical P2
 $$\measuredangle V_{C.I.} = 91^{\circ} 15' 0.0'' \qquad \measuredangle V_{C.D.} = 268^{\circ} 45' 0.0''$$
-$$\measuredangle V = 91^{\circ} 15' 0.0'' + 268^{\circ} 45' 0.0'' = 360^{\circ} 0' 0.0'' Cumple$$
+$$\measuredangle V = 91^{\circ} 15' 0.0'' + 268^{\circ} 45' 0.0'' = 360^{\circ} 0' 0.0'' \textcolor{red}{Cumple}$$
 $$e = 360^{\circ} 0' 0''-360^{\circ} 0' 0.0'' = 0^{\circ} 0' 0.0''$$
-$$f_c = \frac{0.0}{2} = 0.000$$
+$$f_c = \frac{0^{\circ} 0' 0.0''}{2} = 0^{\circ} 0' 0.0''$$
 $$\measuredangle V_{C.I._{Corr.}} = \measuredangle V_{C.I.} + C = 91^{\circ} 15' 0.0'' + (0^{\circ} 0' 0.0'') = 91^{\circ} 15' 0.0''$$
 $$\measuredangle V_{C.D._{Corr.}} = \measuredangle V_{C.D.} + C = 268^{\circ} 45' 0.0'' + (0^{\circ} 0' 0.0'') = 268^{\circ} 45' 0.0''$$
 Verificando:
 $$\measuredangle V_{C.I._{Corr.}} + \measuredangle V_{C.D._{Corr.}} = 360^{\circ} 0' 0'' \qquad 91^{\circ} 15' 0.0'' + 268^{\circ} 45' 0.0'' = 360^{\circ} 0' 0.0''$$
 Finalmente:
-$$\measuredangle V_{1} = 90^{\circ} 0' 0'' - \measuredangle V_{C.I._{Corr}} = 90^{\circ} 0' 0'' - 91^{\circ} 15' 0.0'' = -1^{\circ} 15' 0.0''$$
-Para el ángulo vertical P3
+$$\measuredangle V_{1} = 90^{\circ} 0' 0'' - \measuredangle V_{C.I._{Corr}} = 90^{\circ} 0' 0'' - 91^{\circ} 15' 0.0'' = -1^{\circ} 15' 0.0''$$Para el ángulo vertical P3
 $$\measuredangle V_{C.I.} = 93^{\circ} 35' 0.0'' \qquad \measuredangle V_{C.D.} = 266^{\circ} 23' 60.0''$$
-$$\measuredangle V = 93^{\circ} 35' 0.0'' + 266^{\circ} 23' 60.0'' = 360^{\circ} 0' 0.0'' \texcolor{red}{Cumple}$$
+$$\measuredangle V = 93^{\circ} 35' 0.0'' + 266^{\circ} 23' 60.0'' = 360^{\circ} 0' 0.0'' \textcolor{red}{Cumple}$$
 $$e = 360^{\circ} 0' 0''-360^{\circ} 0' 0.0'' = 0^{\circ} 0' 0.0''$$
-$$f_c = \frac{0.0}{2} = 0.000$$
+$$f_c = \frac{0^{\circ} 0' 0.0''}{2} = 0^{\circ} 0' 0.0''$$
 $$\measuredangle V_{C.I._{Corr.}} = \measuredangle V_{C.I.} + C = 93^{\circ} 35' 0.0'' + (0^{\circ} 0' 0.0'') = 93^{\circ} 35' 0.0''$$
 $$\measuredangle V_{C.D._{Corr.}} = \measuredangle V_{C.D.} + C = 266^{\circ} 23' 60.0'' + (0^{\circ} 0' 0.0'') = 266^{\circ} 23' 60.0''$$
 Verificando:
 $$\measuredangle V_{C.I._{Corr.}} + \measuredangle V_{C.D._{Corr.}} = 360^{\circ} 0' 0'' \qquad 93^{\circ} 35' 0.0'' + 266^{\circ} 23' 60.0'' = 360^{\circ} 0' 0.0''$$
 Finalmente:
-$$\measuredangle V_{2} = 90^{\circ} 0' 0'' - \measuredangle V_{C.I._{Corr}} = 90^{\circ} 0' 0'' - 93^{\circ} 35' 0.0'' = -3^{\circ} 35' 60.0''$$
-\textcolor{blue}{Para el ángulo vertical P1}
+$$\measuredangle V_{2} = 90^{\circ} 0' 0'' - \measuredangle V_{C.I._{Corr}} = 90^{\circ} 0' 0'' - 93^{\circ} 35' 0.0'' = -3^{\circ} 35' 60.0''$$Para el ángulo vertical P1
 $$\measuredangle V_{C.I.} = 88^{\circ} 58' 0.0'' \qquad \measuredangle V_{C.D.} = 271^{\circ} 2' 0.0''$$
-$$\measuredangle V = 88^{\circ} 58' 0.0'' + 271^{\circ} 2' 0.0'' = 360^{\circ} 0' 0.0'' \texcolor{red}{Cumple}$$
+$$\measuredangle V = 88^{\circ} 58' 0.0'' + 271^{\circ} 2' 0.0'' = 360^{\circ} 0' 0.0'' \textcolor{red}{Cumple}$$
 $$e = 360^{\circ} 0' 0''-360^{\circ} 0' 0.0'' = 0^{\circ} 0' 0.0''$$
-$$f_c = \frac{0.0}{2} = 0.000$$
+$$f_c = \frac{0^{\circ} 0' 0.0''}{2} = 0^{\circ} 0' 0.0''$$
 $$\measuredangle V_{C.I._{Corr.}} = \measuredangle V_{C.I.} + C = 88^{\circ} 58' 0.0'' + (0^{\circ} 0' 0.0'') = 88^{\circ} 58' 0.0''$$
 $$\measuredangle V_{C.D._{Corr.}} = \measuredangle V_{C.D.} + C = 271^{\circ} 2' 0.0'' + (0^{\circ} 0' 0.0'') = 271^{\circ} 2' 0.0''$$
 Verificando:
 $$\measuredangle V_{C.I._{Corr.}} + \measuredangle V_{C.D._{Corr.}} = 360^{\circ} 0' 0'' \qquad 88^{\circ} 58' 0.0'' + 271^{\circ} 2' 0.0'' = 360^{\circ} 0' 0.0''$$
 Finalmente:
 $$\measuredangle V_{3} = 90^{\circ} 0' 0'' - \measuredangle V_{C.I._{Corr}} = 90^{\circ} 0' 0'' - 88^{\circ} 58' 0.0'' = 1^{\circ} 1' 60.0''$$
+	<li> [] viii. Calculo de Azimuts</li>
+	Utilizando la formula:
+	$$Az_{Nuevo} = Az_{Antes} + \measuredangle Horz \pm 180^{\circ}$$
+	$$Az_{P1-P2} = 143^{\circ} 51' 0.0'' + 92^{\circ} 21' 20.0'' - 180^{\circ} 0' 0'' = 56^{\circ} 12' 20.0''$$
+$$Az_{P3-P3} = 236^{\circ} 12' 20.0'' + 46^{\circ} 29' 50.0'' - 180^{\circ} 0' 0'' = 102^{\circ} 42' 10.0''$$
+$$Az_{P3-P1} = 282^{\circ} 42' 10.0'' + 41^{\circ} 8' 50.0'' - 180^{\circ} 0' 0'' = 143^{\circ} 51' 0.0''$$
+
+	$$Az_{P3-P1} = 143^{\circ} 51' 0.0''  Cumple con la condicion$$
+
+	<li> [] ix. Calculo del Numero Generador “NG”</li>
+    Se tiene la expresión: $NG_{PTO.EST.-PTO.ADEL} = 100(HS-HI)$
+    $$NG_{P3-P1} = 100 times (0.812 - 0.5) = 31.200$$$$NG_{P1-P3} = 100 times (0.98 - 0.5) = 48.000$$$$NG_{P2-P3} = 100 times (0.848 - 0.5) = 34.800$$
+	<li> [] x. Calculo de Distancias Horizontales</li>
+	Se calculara con la expresión: $DH_{PTO.EST.-PTO.ADEL} = NG \times \cos^2{(\measuredangle V_{PTO.EST.-PTO.ADEL.})}$
+	$$DH_{P1-P2} = 31.200\times \cos^2{(-1^{\circ} 15' 0.0'')} = 31.185$$$$DH_{P3-P3} = 48.000\times \cos^2{(-3^{\circ} 35' 60.0'')} = 47.811$$$$DH_{P3-P1} = 34.800\times \cos^2{(1^{\circ} 1' 60.0'')} = 34.789$$
+	<li> [] xi. Calculo de Distancias Verticales</li>
+	Se calculara con la expresión: $DV_{PTO.EST.-PTO.ADEL} = \frac{1}{2}NG\times \sin{(2\times \measuredangle V_{PTO.EST.-PTO.ADEL.})}$
+	$$DV_{P1-P2} = \frac{1}{2}\times 31.200 \times \sin{(2 \times (-1^{\circ} 15' 0.0'') )} = -0.680$$$$DV_{P3-P3} = \frac{1}{2}\times 48.000 \times \sin{(2 \times (-3^{\circ} 35' 60.0'') )} = -3.008$$$$DV_{P3-P1} = \frac{1}{2}\times 34.800 \times \sin{(2 \times (1^{\circ} 1' 60.0'') )} = 0.627$$
+	<li> [] xii. Coordenadas Parciales</li>
+	$$\Delta N_{P_i} = DH_{i} \times \cos{(Az_{i})}$$
+	$$\Delta N_{P2} = 34.789 \times \cos{(143^{\circ} 51' 0.0'')} = -25.181  \qquad \Delta E_{P2} = 34.789 \times \sin{(143^{\circ} 51' 0.0'')} = -25.181$$$$\Delta N_{P3} = 34.789 \times \cos{(143^{\circ} 51' 0.0'')} = 26.593  \qquad \Delta E_{P3} = 34.789 \times \sin{(143^{\circ} 51' 0.0'')} = 26.593$$$$\Delta N_{P1} = 34.789 \times \cos{(143^{\circ} 51' 0.0'')} = -7.650  \qquad \Delta E_{P1} = 34.789 \times \sin{(143^{\circ} 51' 0.0'')} = -7.650$$
+	Obtención del ERROR:
+	$$e_N = -1\times\left[(-25.181) + (26.593) + (-7.650)\right] = 6.238$$
+	$$e_E = -1\times\left[(18.396) + (39.733) + (33.937)\right] = -92.066$$
+	<li> [] xiii. Determinación del Error Lineal Total y Precisión Lineal</li>
+	$$E.L.T. = \sqrt{e_N^2 + e_E^2} = \sqrt{(6.238)^2 + (-92.066)^2} = 92.277$$
+	$$P.L. = \frac{\sum NG}{E.L.T.} = \frac{31.200 + 48.000 + 34.800}{92.277} = 1.235$$
+    Para la precisión lineal se tendrá:
+     \fbox{Volver al trabajo de campo 1<1.235<333} 
+	<li> [] xiv. Compensación de Coordenadas por el Método de “TRANSIT RULE”</li>
+	1ro. Cálculo del factor de corrección
+	$$f_{CN} = \frac{e_N}{\sum |\Delta N|} = \frac{6.238}{(-25.181) + (26.593) + (-7.650)} = 0.105$$
+	$$f_{CE} = \frac{e_E}{\sum |\Delta E|} = \frac{-92.066}{(18.396) + (39.733) + (33.937)} = -1.000$$
+	2do. El factor de corrección se multiplicará por cada valor del Numero Generador para obtener las correcciones.
+	3ro. Cálculos de las Correcciones
+	$$C_{P3N} = 0.105 \times |-25.181| = 2.643$$ $$C_{P1N} = 0.105 \times |26.593| = 2.792$$ $$C_{P2N} = 0.105 \times |-7.650| = 0.803$$
+	$$C_{P3N} = -1.000 \times |18.396| = -18.396$$ $$C_{P1N} = -1.000 \times |39.733| = -39.733$$ $$C_{P2N} = -1.000 \times |33.937| = -33.937$$
+	4to. Las Correcciones se sumarán en las Coordenadas Parciales para punto.
+	$$C_{P3N} = -25.181 + (2.643) = -22.538$$ $$C_{P1N} = 26.593 + (2.792) = 29.385$$ $$C_{P2N} = -7.650 + (0.803) = -6.847$$
+	$$C_{P3N} = -25.181 + (2.643) = 0.000$$ $$C_{P1N} = 26.593 + (2.792) = 0.000$$ $$C_{P2N} = -7.650 + (0.803) = 0.000$$
+	<li> [] xv. Calculo de las Coordenadas Totales</li>
+	Se tiene como datos iniciales y condición del proyecto:
+	Nº Lista = 51
+	$$Norte = 500 \qquad Este = 700$$
+	$$Norte = 500 + (0.1\times N-lista) \qquad Este = 700 + (0.2\times N-lista)$$
+	$$Norte = 500 + 0.1\times 51 \qquad Este = 700 + (0.2\times 51)$$
+	$$Norte = 505.1 \qquad Este = 710.2$$
+	$$Norte_{p1} = 505.1 \qquad Este_{p1} = 710.2$$
+	$$N_{P2} = N_{P_{1}} + \Delta N_{P2-Corr.} = 505.100 + -22.538 = 482.562 \qquad E_{P2} = E_{P_{1}} + \Delta E_{P2-Corr.} = 710.200 + 0.000 = 710.200$$$$N_{P3} = N_{P_{2}} + \Delta N_{P3-Corr.} = 482.562 + 29.385 = 511.947 \qquad E_{P3} = E_{P_{2}} + \Delta E_{P3-Corr.} = 710.200 + 0.000 = 710.200$$$$N_{P1} = N_{P_{3}} + \Delta N_{P1-Corr.} = 511.947 + -6.847 = 505.100 \qquad E_{P1} = E_{P_{3}} + \Delta E_{P1-Corr.} = 710.200 + 0.000 = 710.200$$
+	<li> [] xvi. Calculo de las Elevaciones</li>
+	Se tiene como dato inicial y condición del problema:
+	Numero de List = 51
+	$$Elev_{i} = 2300[m.s.n.m.]$$
+	$$Elev_{i} = 2300 + (0.3 \times N-Lista)$$
+	$$Elev_{i} = 2300 + (0.3 \times 51)$$
+	$$Elev_{i} = 2315.300$$
+	$$Elev_{P2} = Elev_{P_{1}} + A.I. - A.P. \pm DV_{P_{1}-P2} = 2315.300 + 1.480 - 0.656 + (-0.680) = 2315.444[m.s.n.m.]$$$$Elev_{P3} = Elev_{P_{2}} + A.I. - A.P. \pm DV_{P_{2}-P3} = 2315.444 + 1.470 - 0.740 + (-3.008) = 2313.166[m.s.n.m.]$$$$Elev_{P1} = Elev_{P_{3}} + A.I. - A.P. \pm DV_{P_{3}-P1} = 2313.166 + 1.370 - 0.674 + (0.627) = 2314.489[m.s.n.m.]$$
+	<li> [] xvii. Calculo del Error de la Elevación</li>
+	$$e_{Elev} = Elev_{PTO.INI} - Elev_{PTO.INI.CALC.}$$
+	$$e_{Elev} = 2314.489 - 2315.300 = 0.811$$
+	<li> [] xviii. Compensación de Elevaciones por el Método de “TRANSIT RULE”</li>
+	1ro. Calculo de factor de corrección
+	$$f_{C_{Elev}} = \frac{e_{Elev}}{\sum NG} = \frac{0.811}{31.200 + 48.000 + 34.800} = 0.007$$
+	2do. Factor de Corrección se multiplica por cada una de las Distancias Inclinadas para obtener las Correcciones.
+	$$C_{Elev} = f_{C_{Elev}} \times NG$$
+	$$C_{P2} = 0.007 \times 31.200 = 0.222$$ $$C_{P3} = 0.007 \times 48.000 = 0.341$$ $$C_{P1} = 0.007 \times 34.800 = 0.248$$
+	3ro. Se sumarán las Correcciones a sus respectivas Distancias Verticales
+	$$DV_{Corregido} = DV_i + C_{Elev}$$
+	$$DV_{P_{1}-P2-Corr.} = DV_{P_{1-P2}} + C_{P2-Elev} = 0.627 + 0.222 = -0.459$$ $$DV_{P_{2}-P3-Corr.} = DV_{P_{2-P3}} + C_{P3-Elev} = 0.627 + 0.341 = -2.667$$ $$DV_{P_{3}-P1-Corr.} = DV_{P_{3-P1}} + C_{P1-Elev} = 0.627 + 0.248 = 0.875$$
+	4to. Recalculo de las Elevaciones
+	$$Elev_{Nuevo} = Elev_{Anterior} + A.I. - A.P. \pm DV_{Corregido}$$
+	$$Elev_{P2-Corr.} = Elev_{P_{1}} + A.I. - A.P. \pm DV_{P_{1}-P2-Corr} = 2315.300 + 1.480 - 0.656 + (-0.459) = 2315.665$$$$Elev_{P3-Corr.} = Elev_{P_{2}} + A.I. - A.P. \pm DV_{P_{2}-P3-Corr} = 2315.665 + 1.470 - 0.740 + (-2.667) = 2313.729$$$$Elev_{P1-Corr.} = Elev_{P_{3}} + A.I. - A.P. \pm DV_{P_{3}-P1-Corr} = 2313.729 + 1.370 - 0.674 + (0.875) = 2315.300$$
+	<li> [] xix. Resumen de resultados (TABLA)</li>
 </body>
 </html>
