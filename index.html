@@ -1,15 +1,239 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Proyecto Grande</title>
-        <link rel="stylesheet" href="styles/styles.css" />
-    </head>
-    <body>
-        <header>
-            <img src="assets/Plano.svg" alt="Logo" class="logo"/>
-        </header>
-        <script src="scripts/main.js"/>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        /* Video */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Estilo del video de fondo */
+    .video-fondo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover; /* Escala el video manteniendo proporción */
+      z-index: -1;       /* Lo pone detrás del contenido */
+    }
+
+    /* Contenido visible encima del video */
+    .contenido {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+      background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
+      max-width: 600px;
+      margin: 100px auto;
+      border-radius: 12px;
+    }
+        /* Nombre */
+        .Name{
+            font-size: 32px; 
+            color:blue;
+        }
+        .Name h3{
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+        .accordion {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .accordion-item {
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .accordion-item:last-child {
+            border-bottom: none;
+        }
+        
+        .accordion-header {
+            padding: 15px 20px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        
+        .accordion-header:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .accordion-header h3 {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+        }
+        
+        .accordion-header .icon {
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+        
+        /* Ocultar el checkbox */
+        .accordion-toggle {
+            display: none;
+        }
+        
+        /* Mostrar contenido cuando el checkbox está marcado */
+        .accordion-toggle:checked ~ .accordion-content {
+            max-height: 500px;
+        }
+        
+        /* Rotar icono cuando está activo */
+        .accordion-toggle:checked ~ .accordion-header .icon {
+            transform: rotate(45deg);
+        }
+        
+        .accordion-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .content-buttons {
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+        }
+        
+        .content-button {
+            padding: 10px 15px;
+            margin: 5px 0;
+            background-color: cyan;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: left;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .content-button:hover {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop class="video-fondo">
+        <source src="Fomdo.mp4" type="video/mp4">
+    </video>
+    <div, class="Name">
+       <h3>Nombre: Trujillano Choque Franz Grover </h3>
+       <h3>Paralelo: B </h3>
+       <h3>Materia: Topografía </h3>
+    </div>
+    <div class="accordion">
+        <!-- Levantamiento 1 -->
+        <div class="accordion-item">
+            <input type="checkbox" id="toggle1" class="accordion-toggle">
+            <label for="toggle1" class="accordion-header">
+                <h3>LEVANTAMIENTO CON CINTA JALON – INFORME N.º 1</h3>
+                <span class="icon">+</span>
+            </label>
+            <div class="accordion-content">
+                <div class="content-buttons">
+                    <a href="Lev4/Estudios1.html" class="content-button">Estudios preliminares</a>
+                    <a href="Lev4/Calculos1.html" class="content-button">Cálculos técnicos</a>
+                    <a href="Lev4/Planos1.html" class="content-button">Planos técnicos</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Levantamiento 2 -->
+        <div class="accordion-item">
+            <input type="checkbox" id="toggle2" class="accordion-toggle">
+            <label for="toggle2" class="accordion-header">
+                <h3>LEVANTAMIENTO BRUJULA-CINTA – INFORME N.º 2</h3>
+                <span class="icon">+</span>
+            </label>
+            <div class="accordion-content">
+                <div class="content-buttons">
+                    <a href="Lev4/Estudios2.html" class="content-button">Estudios preliminares</a>
+                    <a href="Lev4/Calculos2.html" class="content-button">Cálculos técnicos</a>
+                    <a href="Lev4/Planos2.html" class="content-button">Planos técnicos</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Levantamiento 3 -->
+        <div class="accordion-item">
+            <input type="checkbox" id="toggle3" class="accordion-toggle">
+            <label for="toggle3" class="accordion-header">
+                <h3>LEVANTAMIENTO TEODOLITO-CINTA – INFORME N.º 3</h3>
+                <span class="icon">+</span>
+            </label>
+            <div class="accordion-content">
+                <div class="content-buttons">
+                    <a href="Lev4/Estudios3.html" class="content-button">Estudios preliminares</a>
+                    <a href="Lev4/Calculos3.html" class="content-button">Cálculos técnicos</a>
+                    <a href="Lev4/Planos3.html" class="content-button">Planos técnicos</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Levantamiento 4 -->
+        <div class="accordion-item">
+            <input type="checkbox" id="toggle4" class="accordion-toggle">
+            <label for="toggle4" class="accordion-header">
+                <h3>LEVANTAMIENTO TOPOGRAFICO “TAQUIMETRIA” – INFORME N.º 4</h3>
+                <span class="icon">+</span>
+            </label>
+            <div class="accordion-content">
+                <div class="content-buttons">
+                    <a href="Lev4/Estudios4.html" class="content-button">Estudios preliminares</a>
+                    <a href="Lev4/Calculos4.html" class="content-button">Cálculos técnicos</a>
+                    <a href="Lev4/Planos4.html" class="content-button">Planos técnicos</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Levantamiento 5 -->
+        <div class="accordion-item">
+            <input type="checkbox" id="toggle5" class="accordion-toggle">
+            <label for="toggle5" class="accordion-header">
+                <h3>LEVANTAMIENTO TOPOGRÁFICO – INFORME N.º 5</h3>
+                <span class="icon">+</span>
+            </label>
+            <div class="accordion-content">
+                <div class="content-buttons">
+                    <a href="Lev4/Estudios5.html" class="content-button">Estudios preliminares</a>
+                    <a href="Lev4/Calculos5.html" class="content-button">Cálculos técnicos</a>
+                    <a href="Lev4/Planos5.html" class="content-button">Planos técnicos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
