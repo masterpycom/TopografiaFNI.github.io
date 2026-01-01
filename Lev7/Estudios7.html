@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Fórmulas en LaTeX</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <style>
+        @page {
+            size: letter; /* Tamaño carta estándar */
+            margin: 2.5cm; /* Márgenes de 2.5 cm (ajustables) */
+        }
+
+        body {
+            font-family: "Times New Roman", serif;
+            font-size: 12pt;
+            line-height: 1.5;
+            color: #000;
+            max-width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        h1, h2, h3 {
+            page-break-after: avoid;
+        }
+        #printButton {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            padding: 10px 15px;
+            background: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+        }
+
+        #printButton:hover {
+            background: #3498db;
+        }
+
+        /* Ocultar botón al imprimir */
+        @media print {
+            #printButton {
+                display: none;
+            }
+        }
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 2em; }
+        h1 { font-size: 1.8em; color: red; border-bottom: 2px solid #3498db; padding-bottom: 5px; }
+        h2 { font-size: 1.5em; color: magenta; margin-top: 1.5em; }
+        h3 { font-size: 1.3em; color: blue; margin-top: 1em; }
+    </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Informe Topográfico</h1>
+<p class="author">Autor: Trujillano Ch. Franz G.</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#introducción" id="toc-introducción"><span class="toc-section-number">1</span> INTRODUCCIÓN</a></li>
+<li><a href="#objetivos" id="toc-objetivos"><span class="toc-section-number">2</span> OBJETIVOS</a></li>
+<li><a href="#fundamento-teorico" id="toc-fundamento-teorico"><span class="toc-section-number">3</span> FUNDAMENTO TEORICO</a></li>
+</ul>
+</nav>
+<section id="introducción" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> INTRODUCCIÓN</h1>
+<p>El presente proyecto tiene como finalidad realizar el levantamiento topográfico para el cálculo de volúmenes de corte y relleno en un terreno determinado, aplicando métodos de nivelación directa (figura cerrada). Estos cálculos son fundamentales en la planificación y ejecución de obras civiles, permitiendo optimizar el movimiento de tierras y garantizar la precisión en los diseños de rasantes y perfiles transversales.</p>
+</section>
+<section id="objetivos" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> OBJETIVOS</h1>
+<ul>
+<li><p><strong>Objetivo General:</strong> Determinar los volúmenes de corte y relleno mediante técnicas topográficas, utilizando métodos de nivelación y cálculo de áreas para su aplicación en proyectos</p></li>
+<li><p><strong>Objetivos Específicos:</strong></p>
+<ul>
+<li><p>Realizar una nivelación geométrica de precisión para obtener las elevaciones de los puntos de interés.</p></li>
+<li><p>Calcular las elevaciones de la rasante en función de la gradiente proyectada.</p></li>
+<li><p>Aplicar fórmulas como el Prismoide y métodos de prismas truncados para el cálculo de volúmenes.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="fundamento-teorico" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> FUNDAMENTO TEORICO</h1>
+<ul>
+<li><p><strong>método del prismoide</strong> constituye un procedimiento geométrico-analítico de alta precisión empleado en topografía e ingeniería civil para el cálculo de volúmenes de movimiento de tierras entre dos secciones transversales paralelas. Este método se fundamenta en el concepto geométrico del prismoide, definido como un sólido limitado por dos caras planas paralelas (secciones transversales) y una superficie lateral reglada cuyas generatrices rectilíneas unen puntos homólogos de los perímetros de ambas bases.<br />
+Fórmula General del Prismoide <span class="math display">\[\begin{equation}
+\boxed{V = \dfrac{L}{6} \cdot \left(A_1 + 4A_m + A_2\right)}
+\end{equation}\]</span> Descripción de Parámetros:</p>
+<ul>
+<li><p>Volumen del prismoide (m<sup>3</sup>, yd<sup>3</sup>, pies<sup>3</sup>)</p></li>
+<li><p>Distancia horizontal entre secciones transversales (m)</p></li>
+<li><p>Área de la sección transversal inicial (m<sup>2</sup>)</p></li>
+<li><p>Área de la sección transversal final (m<sup>2</sup>)</p></li>
+<li><p>Área de la sección transversal en el punto medio, calculada mediante interpolación lineal de cotas (m<sup>2</sup>)</p></li>
+</ul></li>
+<li><p><strong>talud</strong> es una superficie inclinada respecto a la horizontal que limita un terreno, excavación o terraplén. Representa la transición entre dos niveles diferentes y su diseño es crítico para la estabilidad de obras civiles.<br />
+Parámetros Geométricos Fundamentales<br />
+<strong>Pendiente como relación (talud):</strong> <span class="math display">\[i = \frac{H}{D} = \frac{1}{n}\]</span> donde <span class="math inline">\(H\)</span> = altura, <span class="math inline">\(D\)</span> = distancia horizontal, <span class="math inline">\(n\)</span> = valor del talud (ej: 2:1). <strong>Pendiente como porcentaje:</strong> <span class="math display">\[\% = \frac{H}{D} \times 100\]</span> <strong>Ángulo de inclinación:</strong> <span class="math display">\[\alpha = \arctan\left(\frac{H}{D}\right)\]</span><br />
+Tipos de Taludes Comunes</p>
+<ul>
+<li><p><strong>Talud 1:1</strong> - 45° (100%)</p></li>
+<li><p><strong>Talud 2:1</strong> - 26.6° (50%)</p></li>
+<li><p><strong>Talud 3:1</strong> - 18.4° (33.3%)</p></li>
+<li><p><strong>Talud vertical</strong> - 1:0 (90°)</p></li>
+</ul></li>
+<li><p><strong>movimientos de tierras</strong> comprenden todas las operaciones de excavación, transporte, colocación y compactación de materiales térreos necesarias para modificar la topografía natural y alcanzar las cotas de proyecto. Representan una fase crítica que influye directamente en costos, plazos y calidad de las obras civiles. Clasificación de Movimientos de Tierras <strong>Por naturaleza del trabajo:</strong></p>
+<ul>
+<li><p><strong>Desmonte:</strong> Excavación en terreno natural</p></li>
+<li><p><strong>Terraplén:</strong> Relleno con material compactado</p></li>
+<li><p><strong>Compensación:</strong> Aprovechamiento de material propio</p></li>
+<li><p><strong>Préstamo:</strong> Material importado de cantera</p></li>
+<li><p><strong>Desterro:</strong> Material excedente para vertedero</p></li>
+</ul></li>
+</ul>
+</section>
+</body>
+</body>
+</html>

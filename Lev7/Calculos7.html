@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Prueva</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+</head>
+
+<body>
+<header id="title-block-header">
+<h1 class="title">Informe Topográfico</h1>
+<p class="author">Autor: Trujillano Ch. Franz G.</p>
+</header>
+<ol>
+<li><p><span style="color: red!30">Planilla</span><br />
+</p>
+<div class="center">
+<div id="tab:">
+<table>
+<caption> DATOS DE LEVANTAMIENTO </caption>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="math inline">\(Punto\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Parcial\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Acum\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(B.S.\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(INT.\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(F.S.\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(A-1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2.643\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(A-2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2.405\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(A-3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(40\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1.892\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(A-4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(60\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1.325\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.685\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(B-4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(80\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2.5\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(C-4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(100\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.753\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(3.206\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(C-3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(120\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1.723\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(C-2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(140\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2.179\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(C-1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(160\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2.128\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2.322\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(B-1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(180\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1.295\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(A-1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(200\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.63\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></li>
+<li><p><span style="color: blue!30"> Calculo de las Distancias Acumuladas</span><br />
+<span class="math display">\[DH_{Acum.} = DH_{Acum.-1} + DH_{i}\]</span></p>
+<div class="multicols">
+<p><span>2</span> <span class="math display">\[DH_{Acum} = 0 + 0 = 0\]</span> <span class="math display">\[DH_{Acum} = 0 + 20 = 20\]</span> <span class="math display">\[DH_{Acum} = 20 + 20 = 40\]</span> <span class="math display">\[DH_{Acum} = 40 + 20 = 60\]</span> <span class="math display">\[DH_{Acum} = 60 + 20 = 80\]</span> <span class="math display">\[DH_{Acum} = 80 + 20 = 100\]</span> <span class="math display">\[DH_{Acum} = 100 + 20 = 120\]</span> <span class="math display">\[DH_{Acum} = 120 + 20 = 140\]</span> <span class="math display">\[DH_{Acum} = 140 + 20 = 160\]</span> <span class="math display">\[DH_{Acum} = 160 + 20 = 180\]</span> <span class="math display">\[DH_{Acum} = 180 + 20 = 200\]</span></p>
+</div></li>
+<li><p><span style="color: blue!30">Calculo de Desnivel</span><br />
+<span class="math display">\[Desn_{i-1} = BS - INT \quad Desn_{i-1} = INT_{1} - INT_{2} \quad Desn_{i-1} = BS - FS\]</span></p>
+<div class="multicols">
+<p><span>2</span> <span class="math display">\[Desn_{A-1} = (2.643 - 2.405) + (0 - 0) = 0.238\]</span> <span class="math display">\[Desn_{A-2} = (0 - 1.892) + (2.405 - 0) = 0.513\]</span> <span class="math display">\[Desn_{A-3} = (0 - 0) + (1.892 - 0.685) = 1.207\]</span> <span class="math display">\[Desn_{A-4} = (1.325 - 2.5) + (0 - 0) = -1.175\]</span> <span class="math display">\[Desn_{B-4} = (0 - 0) + (2.5 - 3.206) = -0.706\]</span> <span class="math display">\[Desn_{C-4} = (0.753 - 1.723) + (0 - 0) = -0.97\]</span> <span class="math display">\[Desn_{C-3} = (0 - 2.179) + (1.723 - 0) = -0.456\]</span> <span class="math display">\[Desn_{C-2} = (0 - 0) + (2.179 - 2.322) = -0.143\]</span> <span class="math display">\[Desn_{C-1} = (2.128 - 1.295) + (0 - 0) = 0.833\]</span> <span class="math display">\[Desn_{B-1} = (0 - 0) + (1.295 - 0.63) = 0.665\]</span></p>
+</div></li>
+<li><p><span style="color: blue!30">Calculo de la Elevación</span><br />
+<span class="math display">\[Elev_{i} = Elev_{i-1} + BS - INT \quad Elev_{i} = Elev_{i-1} + INT_{1} - INT_{2} \quad Elev_{i} = Elev_{i-1} + BS - FS\]</span></p>
+<div class="multicols">
+<p><span>2</span> <span class="math display">\[Elev_{A-1} = 3608.5 + 0 = 3608.5\]</span> <span class="math display">\[Elev_{A-2} = 3608.5 + 0.238 = 3608.738\]</span> <span class="math display">\[Elev_{A-3} = 3608.738 + 0.513 = 3609.251\]</span> <span class="math display">\[Elev_{A-4} = 3609.251 + 1.207 = 3610.458\]</span> <span class="math display">\[Elev_{B-4} = 3610.458 + (-1.175) = 3609.283\]</span> <span class="math display">\[Elev_{C-4} = 3609.283 + (-0.706) = 3608.577\]</span> <span class="math display">\[Elev_{C-3} = 3608.577 + (-0.97) = 3607.607\]</span> <span class="math display">\[Elev_{C-2} = 3607.607 + (-0.456) = 3607.151\]</span> <span class="math display">\[Elev_{C-1} = 3607.151 + (-0.143) = 3607.008\]</span> <span class="math display">\[Elev_{B-1} = 3607.008 + 0.833 = 3607.841\]</span> <span class="math display">\[Elev_{A-1} = 3607.841 + 0.665 = 3608.506\]</span></p>
+</div></li>
+<li><p><span style="color: blue!30">Error y Precisión Cerrada</span><br />
+<span class="math display">\[e_{1} = \sum BS - \sum FS \qquad \left\lbrace\begin{array}{llllllll} e_{1}[mm] &amp; \Rightarrow &amp; \sum DH [m] \\ x[mm] &amp; \Rightarrow &amp; 1000 [m] \end{array}\right. \qquad x = \frac{e_{1}[mm]}{\sum DH} \times 1000\]</span> <span class="math display">\[e_{1} = 6.849 - 6.843 = 0.006 \qquad e_{1} = |0.006| = 0.006 \qquad e_{1}=0.006\times 1000 = 6\]</span> <span class="math display">\[\sum Pa_i = 0 + 20 + 20 + 20 + 20 + 20 + 20 + 20 + 20 + 20 + 20 = 200\]</span> <span class="math display">\[x = \frac{6}{200} = 30\]</span> <span class="math display">\[\left\lbrace\begin{array}{llllllll} 1 &amp; \longrightarrow &amp; \text{Nivelacion de gran precisión} \Rightarrow 30 \leqq 5 \left[\frac{mm}{km}\right] \\ 2 &amp; \longrightarrow &amp; \text{Nivelacion Precisa} \Rightarrow 30 \leqq 10 \left[\frac{mm}{km}\right] \\ 3 &amp; \longrightarrow &amp; \text{Nivelacion Corriente } \Rightarrow 30 \leqq 30 \left[\frac{mm}{km}\right] \end{array}\right.\]</span></p></li>
+<li><p><span style="color: blue!30">Corrección</span><br />
+<span class="math display">\[e_{2} = Elev_{Dato_i} - Elev_{cal._i} = 3608.5 - 3608.506 = -0.006\]</span> <span class="math display">\[f_C = \frac{e}{DH_{Acum}} = \frac{-0.006}{200} = -3.000\times 10^{-5}\]</span></p></li>
+<li><p><span style="color: blue!30">Calculo de la Gradiente o Pendiente</span><br />
+<span class="math display">\[\text{La corrección será: } C_{i} = f_C \times DH_{Acum_i}\]</span></p>
+<div class="multicols">
+<p><span>2</span> <span class="math display">\[C_{{A-1}} = -3.000\times 10^{-5} \times 0 = 0\]</span> <span class="math display">\[C_{{A-2}} = -3.000\times 10^{-5} \times 20 = -6.000\times 10^{-4}\]</span> <span class="math display">\[C_{{A-3}} = -3.000\times 10^{-5} \times 40 = -0.001\]</span> <span class="math display">\[C_{{A-4}} = -3.000\times 10^{-5} \times 60 = -0.002\]</span> <span class="math display">\[C_{{B-4}} = -3.000\times 10^{-5} \times 80 = -0.002\]</span> <span class="math display">\[C_{{C-4}} = -3.000\times 10^{-5} \times 100 = -0.003\]</span> <span class="math display">\[C_{{C-3}} = -3.000\times 10^{-5} \times 120 = -0.004\]</span> <span class="math display">\[C_{{C-2}} = -3.000\times 10^{-5} \times 140 = -0.004\]</span> <span class="math display">\[C_{{C-1}} = -3.000\times 10^{-5} \times 160 = -0.005\]</span> <span class="math display">\[C_{{B-1}} = -3.000\times 10^{-5} \times 180 = -0.005\]</span> <span class="math display">\[C_{{A-1}} = -3.000\times 10^{-5} \times 200 = -0.006\]</span></p>
+</div>
+<p><span class="math display">\[Elev_{Corr._i} = Elev_{i} + C_i\]</span></p>
+<div class="multicols">
+<p><span>2</span> <span class="math display">\[Elev_{{A-1}} = 3608.5 + 0 = 3608.5\]</span> <span class="math display">\[Elev_{{A-2}} = 3608.738 + (-6.000\times 10^{-4}) = 3608.737\]</span> <span class="math display">\[Elev_{{A-3}} = 3609.251 + (-0.001) = 3609.25\]</span> <span class="math display">\[Elev_{{A-4}} = 3610.458 + (-0.002) = 3610.456\]</span> <span class="math display">\[Elev_{{B-4}} = 3609.283 + (-0.002) = 3609.281\]</span> <span class="math display">\[Elev_{{C-4}} = 3608.577 + (-0.003) = 3608.574\]</span> <span class="math display">\[Elev_{{C-3}} = 3607.607 + (-0.004) = 3607.603\]</span> <span class="math display">\[Elev_{{C-2}} = 3607.151 + (-0.004) = 3607.147\]</span> <span class="math display">\[Elev_{{C-1}} = 3607.008 + (-0.005) = 3607.003\]</span> <span class="math display">\[Elev_{{B-1}} = 3607.841 + (-0.005) = 3607.836\]</span> <span class="math display">\[Elev_{{A-1}} = 3608.506 + (-0.006) = 3608.5\]</span></p>
+</div></li>
+<li><p><span style="color: blue!30">Calculo de la Gradiente o Pendiente</span><br />
+Gradiente Horizontal <span class="math inline">\(Grad_{Horz} = 1\%\)</span><br />
+Gradiente Vertical <span class="math inline">\(Grad_{Vert} = 0.6\%\)</span><br />
+</p></li>
+<li><p><span style="color: red!30">Planilla</span><br />
+</p>
+<div class="center">
+<div id="tab:">
+<table>
+<caption> DATOS DE LEVANTAMIENTO </caption>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="math inline">\(Punto\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Parcial\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Acum\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(B.S.\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(INT.\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(F.S.\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(B-1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2.285\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(B-2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2.195\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(B-3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(40\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1.718\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(B-4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(20\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(60\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.787\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></li>
+<li><p><span style="color: cyan!30"> Calculo de las Distancias Acumuladas</span><br />
+<span class="math display">\[DH_{Acum.} = DH_{Acum.-1} + DH_{i}\]</span></p>
+<div class="multicols">
+<p><span>2</span> <span class="math display">\[DH_{Acum} = 0 + 0 = 0\]</span> <span class="math display">\[DH_{Acum} = 0 + 20 = 20\]</span> <span class="math display">\[DH_{Acum} = 20 + 20 = 40\]</span> <span class="math display">\[DH_{Acum} = 40 + 20 = 60\]</span></p>
+</div></li>
+<li><p><span style="color: cyan!30">Calculo de Desnivel</span><br />
+<span class="math display">\[Desn_{i-1} = BS - INT \quad Desn_{i-1} = INT_{1} - INT_{2} \quad Desn_{i-1} = BS - FS\]</span></p>
+<div class="multicols">
+<p><span>2</span> <span class="math display">\[Desn_{B-1} = (2.285 - 2.195) + (0 - 0) = 0.09\]</span> <span class="math display">\[Desn_{B-2} = (0 - 1.718) + (2.195 - 0) = 0.477\]</span> <span class="math display">\[Desn_{B-3} = (0 - 0) + (1.718 - 0.787) = 0.931\]</span></p>
+</div></li>
+<li><p><span style="color: cyan!30">Calculo de la Elevación</span><br />
+<span class="math display">\[Elev_{i} = Elev_{i-1} + BS - INT \quad Elev_{i} = Elev_{i-1} + INT_{1} - INT_{2} \quad Elev_{i} = Elev_{i-1} + BS - FS\]</span></p>
+<div class="multicols">
+<p><span>2</span> <span class="math display">\[Elev_{B-1} = 3609.281 + 0 = 3609.281\]</span> <span class="math display">\[Elev_{B-2} = 3609.281 + 0.09 = 3609.371\]</span> <span class="math display">\[Elev_{B-3} = 3609.371 + 0.477 = 3609.848\]</span> <span class="math display">\[Elev_{B-4} = 3609.848 + 0.931 = 3610.779\]</span></p>
+</div></li>
+<li><p><span style="color: cyan!30">Error y Precisión Cerrada</span><br />
+<span class="math display">\[e_{1} = \sum BS - \sum FS \qquad \left\lbrace\begin{array}{llllllll} e_{1}[mm] &amp; \Rightarrow &amp; \sum DH [m] \\ x[mm] &amp; \Rightarrow &amp; 1000 [m] \end{array}\right. \qquad x = \frac{e_{1}[mm]}{\sum DH} \times 1000\]</span> <span class="math display">\[e_{1} = 2.285 - 0.787 = 1.498 \qquad e_{1} = |1.498| = 1.498 \qquad e_{1}=1.498\times 1000 = 1498\]</span> <span class="math display">\[\sum Pa_i = 0 + 20 + 20 + 20 = 60\]</span> <span class="math display">\[x = \frac{1498}{60} = 2.500\times 10^{4}\]</span> <span class="math display">\[\left\lbrace\begin{array}{llllllll} 1 &amp; \longrightarrow &amp; \text{Nivelacion de gran precisión} \Rightarrow 2.500\times 10^{4} \leqq 5 \left[\frac{mm}{km}\right] \\ 2 &amp; \longrightarrow &amp; \text{Nivelacion Precisa} \Rightarrow 2.500\times 10^{4} \leqq 10 \left[\frac{mm}{km}\right] \\ 3 &amp; \longrightarrow &amp; \text{Nivelacion Corriente } \Rightarrow 2.500\times 10^{4} \leqq 30 \left[\frac{mm}{km}\right] \end{array}\right.\]</span></p></li>
+<li><p><span style="color: cyan!30">Corrección</span><br />
+<span class="math display">\[e_{2} = Elev_{Dato_i} - Elev_{cal._i} = 3607.836 - 3610.779 = -2.943\]</span> <span class="math display">\[f_C = \frac{e}{DH_{Acum}} = \frac{-2.943}{60} = -0.049\]</span></p></li>
+<li><p><span style="color: cyan!30">Calculo de la Gradiente o Pendiente</span><br />
+<span class="math display">\[\text{La corrección será: } C_{i} = f_C \times DH_{Acum_i}\]</span></p>
+<div class="multicols">
+<p><span>2</span> <span class="math display">\[C_{{B-1}} = -0.049 \times 0 = 0\]</span> <span class="math display">\[C_{{B-2}} = -0.049 \times 20 = -0.981\]</span> <span class="math display">\[C_{{B-3}} = -0.049 \times 40 = -1.962\]</span> <span class="math display">\[C_{{B-4}} = -0.049 \times 60 = -2.943\]</span></p>
+</div>
+<p><span class="math display">\[Elev_{Corr._i} = Elev_{i} + C_i\]</span></p>
+<div class="multicols">
+<p><span>2</span> <span class="math display">\[Elev_{{B-1}} = 3609.281 + 0 = 3609.281\]</span> <span class="math display">\[Elev_{{B-2}} = 3609.371 + (-0.981) = 3608.39\]</span> <span class="math display">\[Elev_{{B-3}} = 3609.848 + (-1.962) = 3607.886\]</span> <span class="math display">\[Elev_{{B-4}} = 3610.779 + (-2.943) = 3607.836\]</span></p>
+</div></li>
+<li><p><span style="color: cyan!30">Calculo de la Gradiente o Pendiente</span><br />
+Gradiente Horizontal <span class="math inline">\(Grad_{Horz} = 1\%\)</span><br />
+Gradiente Vertical <span class="math inline">\(Grad_{Vert} = 0.6\%\)</span><br />
+</p></li>
+<li><p><span style="color: red!30">Calculo de las Elevaciones de la Rasante:</span><br />
+</p>
+<figure data-latex-placement="H">
+
+<figcaption>Escala <span class="math inline">\(ESC:1:1200\)</span> factor <span class="math inline">\(f_c = 0.083\)</span></figcaption>
+</figure>
+<p><span class="math display">\[Elev_{Ras_i} = Elev_{Corr_i} - h_i \qquad Elev_{Ras_i} = Elev_{Corr_i} - h_i\]</span> <span class="math display">\[Elev_{C-1} = 3607.003 \qquad Elev_{C-1} = 3607.003 - 1.2 = 3605.803[msnm]\]</span> Se calculara las elevaciones<span>r’<br />
+’</span> <span class="math display">\[Elev_{Rasante_{i+1}} = Elev_{Rasante_{i}} \pm \frac{Grad}{100} \times DH_i\]</span> <span class="math display">\[Elev_{Rasante_{A-1}} = 3605.803 + \frac{+1.0}{100}\times(0) + \frac{-0.6}{100}\times(-40) = 3606.043\]</span> <span class="math display">\[Elev_{Rasante_{A-2}} = 3605.803 + \frac{+1.0}{100}\times(20) + \frac{-0.6}{100}\times(-40) = 3606.243\]</span> <span class="math display">\[Elev_{Rasante_{A-3}} = 3605.803 + \frac{+1.0}{100}\times(40) + \frac{-0.6}{100}\times(-40) = 3606.443\]</span> <span class="math display">\[Elev_{Rasante_{A-4}} = 3605.803 + \frac{+1.0}{100}\times(60) + \frac{-0.6}{100}\times(-40) = 3606.643\]</span> <span class="math display">\[Elev_{Rasante_{B-1}} = 3605.803 + \frac{+1.0}{100}\times(0) + \frac{-0.6}{100}\times(-20) = 3605.923\]</span> <span class="math display">\[Elev_{Rasante_{B-2}} = 3605.803 + \frac{+1.0}{100}\times(20) + \frac{-0.6}{100}\times(-20) = 3606.123\]</span> <span class="math display">\[Elev_{Rasante_{B-3}} = 3605.803 + \frac{+1.0}{100}\times(40) + \frac{-0.6}{100}\times(-20) = 3606.323\]</span> <span class="math display">\[Elev_{Rasante_{B-4}} = 3605.803 + \frac{+1.0}{100}\times(60) + \frac{-0.6}{100}\times(-20) = 3606.523\]</span> <span class="math display">\[Elev_{Rasante_{C-1}} = 3605.803 + \frac{+1.0}{100}\times(0) + \frac{-0.6}{100}\times(0) = 3605.803\]</span> <span class="math display">\[Elev_{Rasante_{C-2}} = 3605.803 + \frac{+1.0}{100}\times(20) + \frac{-0.6}{100}\times(0) = 3606.003\]</span> <span class="math display">\[Elev_{Rasante_{C-3}} = 3605.803 + \frac{+1.0}{100}\times(40) + \frac{-0.6}{100}\times(0) = 3606.203\]</span> <span class="math display">\[Elev_{Rasante_{C-4}} = 3605.803 + \frac{+1.0}{100}\times(60) + \frac{-0.6}{100}\times(0) = 3606.403\]</span></p>
+<figure data-latex-placement="H">
+
+<figcaption>Escala <span class="math inline">\(ESC:1:1200\)</span> factor <span class="math inline">\(f_c = 0.083\)</span></figcaption>
+</figure></li>
+<li><p><span style="color: red!30">Calculo de las Elevaciones Promedio del Terreno:</span><br />
+</p>
+<figure data-latex-placement="H">
+
+<figcaption>Escala <span class="math inline">\(ESC:1:1200\)</span> factor <span class="math inline">\(f_c = 0.083\)</span></figcaption>
+</figure>
+<p><span class="math display">\[Elev_{Terr_{1}} = \frac{3608.500 + 3608.737 + 3607.836 + 3608.390}{4} = 3608.366\]</span> <span class="math display">\[Elev_{Terr_{2}} = \frac{3608.737 + 3609.250 + 3608.390 + 3607.886}{4} = 3608.566\]</span> <span class="math display">\[Elev_{Terr_{3}} = \frac{3609.250 + 3610.456 + 3607.886 + 3609.281}{4} = 3609.218\]</span> <span class="math display">\[Elev_{Terr_{4}} = \frac{3607.836 + 3608.390 + 3607.003 + 3607.147}{4} = 3607.594\]</span> <span class="math display">\[Elev_{Terr_{5}} = \frac{3608.390 + 3607.886 + 3607.147 + 3607.603}{4} = 3607.756\]</span> <span class="math display">\[Elev_{Terr_{6}} = \frac{3607.886 + 3609.281 + 3607.603 + 3608.574}{4} = 3608.336\]</span></p></li>
+<li><p><span style="color: red!30">Calculo de las Elevaciones Promedio Rasantes:</span><br />
+</p>
+<figure data-latex-placement="H">
+
+<figcaption>Escala <span class="math inline">\(ESC:1:1200\)</span> factor <span class="math inline">\(f_c = 0.083\)</span></figcaption>
+</figure>
+<p><span class="math display">\[Elev_{Raz_{1}} = \frac{3606.043 + 3606.243 + 3605.923 + 3606.123}{4} = 3606.083\]</span> <span class="math display">\[Elev_{Raz_{2}} = \frac{3606.243 + 3606.443 + 3606.123 + 3606.323}{4} = 3606.283\]</span> <span class="math display">\[Elev_{Raz_{3}} = \frac{3606.443 + 3606.643 + 3606.323 + 3606.523}{4} = 3606.483\]</span> <span class="math display">\[Elev_{Raz_{4}} = \frac{3605.923 + 3606.123 + 3605.803 + 3606.003}{4} = 3605.963\]</span> <span class="math display">\[Elev_{Raz_{5}} = \frac{3606.123 + 3606.323 + 3606.003 + 3606.203}{4} = 3606.163\]</span> <span class="math display">\[Elev_{Raz_{6}} = \frac{3606.323 + 3606.523 + 3606.203 + 3606.403}{4} = 3606.363\]</span></p></li>
+<li><p><span style="color: red!30">Calculo de las Alturas de Excavación hi:</span><br />
+</p>
+<div class="multicols">
+<p><span>2</span> <span class="math display">\[h_{{1}} = 3608.366 + 3606.083 = 2.282 [m]\]</span> <span class="math display">\[h_{{2}} = 3608.566 + 3606.283 = 2.282 [m]\]</span> <span class="math display">\[h_{{3}} = 3609.218 + 3606.483 = 2.735 [m]\]</span> <span class="math display">\[h_{{4}} = 3607.594 + 3605.963 = 1.631 [m]\]</span> <span class="math display">\[h_{{5}} = 3607.756 + 3606.163 = 1.593 [m]\]</span> <span class="math display">\[h_{{6}} = 3608.336 + 3606.363 = 1.973 [m]\]</span></p>
+</div></li>
+<li><p><span style="color: red!30">Calculo de Volumenes:</span><br />
+</p>
+<div class="multicols">
+<p><span>2</span> <span class="math display">\[V_{{1}} = 20 \times 20 \times 2.282 = 912.98 [m^3]\]</span> <span class="math display">\[V_{{2}} = 20 \times 20 \times 2.282 = 912.96 [m^3]\]</span> <span class="math display">\[V_{{3}} = 20 \times 20 \times 2.735 = 1093.94 [m^3]\]</span> <span class="math display">\[V_{{4}} = 20 \times 20 \times 1.631 = 652.24 [m^3]\]</span> <span class="math display">\[V_{{5}} = 20 \times 20 \times 1.593 = 637.26 [m^3]\]</span> <span class="math display">\[V_{{6}} = 20 \times 20 \times 1.973 = 789.08 [m^3]\]</span></p>
+</div>
+<p>El volumen total será: <span class="math display">\[V_t = 912.980 + 912.960 + 1093.940 + 652.240 + 637.260 + 789.080 = 4998.46 [m^3]\]</span></p></li>
+<li><p><span style="color: red!30">Calculo de la Progresiva:</span><br />
+</p>
+<div class="multicols">
+<p><span>2</span> <span class="math display">\[Prog_{A-1} = (0+000.00) + (0+000.00) = 0+000.00\]</span> <span class="math display">\[Prog_{A-2} = (0+000.00) + (0+020.00) = 0+020.00\]</span> <span class="math display">\[Prog_{A-3} = (0+020.00) + (0+020.00) = 0+040.00\]</span> <span class="math display">\[Prog_{A-4} = (0+040.00) + (0+020.00) = 0+060.00\]</span> <span class="math display">\[Prog_{B-4} = (0+060.00) + (0+020.00) = 0+080.00\]</span> <span class="math display">\[Prog_{C-4} = (0+080.00) + (0+020.00) = 0+100.00\]</span> <span class="math display">\[Prog_{C-3} = (0+100.00) + (0+020.00) = 0+120.00\]</span> <span class="math display">\[Prog_{C-2} = (0+120.00) + (0+020.00) = 0+140.00\]</span> <span class="math display">\[Prog_{C-1} = (0+140.00) + (0+020.00) = 0+160.00\]</span> <span class="math display">\[Prog_{B-1} = (0+160.00) + (0+020.00) = 0+180.00\]</span> <span class="math display">\[Prog_{A-1} = (0+180.00) + (0+020.00) = 0+200.00\]</span></p>
+</div></li>
+</ol>
+</body>
+</html>
