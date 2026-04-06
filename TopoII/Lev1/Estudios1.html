@@ -1,11 +1,179 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <meta charset="UTF-8">
+    <title>Fórmulas en LaTeX</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <style>
+        @page {
+            size: letter; /* Tamaño carta estándar */
+            margin: 2.5cm; /* Márgenes de 2.5 cm (ajustables) */
+        }
+
+        body {
+            font-family: "Times New Roman", serif;
+            font-size: 12pt;
+            line-height: 1.5;
+            color: #000;
+            max-width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        h1, h2, h3 {
+            page-break-after: avoid;
+        }
+        #printButton {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            padding: 10px 15px;
+            background: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+        }
+
+        #printButton:hover {
+            background: #3498db;
+        }
+
+        /* Ocultar botón al imprimir */
+        @media print {
+            #printButton {
+                display: none;
+            }
+        }
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 2em; }
+        h1 { font-size: 1.8em; color: red; border-bottom: 2px solid #3498db; padding-bottom: 5px; }
+        h2 { font-size: 1.5em; color: magenta; margin-top: 1.5em; }
+        h3 { font-size: 1.3em; color: blue; margin-top: 1em; }
+    </style>
 </head>
 <body>
+    <h1 id="introducción">INTRODUCCIÓN</h1>
+<p>La nivelación de bancos de nivel es un proceso fundamental en la topografía que permite establecer el control vertical de un área de estudio. En este proyecto, se aplican métodos de nivelación geométrica para determinar cotas precisas, esenciales para el diseño y ejecución de obras civiles</p>
+<h1 id="objetivo">OBJETIVO</h1>
+<p>Establecer y ajustar las elevaciones de distintos Bancos de Nivel (BM) mediante el uso de nivelación diferencial, aplicando el método de mínimos cuadrados para la corrección de errores y garantizando la precisión requerida para el proyecto.</p>
+<h1 id="marco-teórico">MARCO TEÓRICO</h1>
+<h2 id="bancos-de-nivel">Bancos de nivel</h2>
+<figure data-latex-placement="H">
 
+<figcaption>NIVELACIÓN</figcaption>
+</figure>
+<h3 id="definición">Definición</h3>
+<p>Un Banco de Nivel (Bench Mark) es un punto de control vertical de carácter permanente o semipermanente, cuya elevación o cota es conocida con precisión respecto a un plano de referencia, generalmente el Nivel Medio del Mar (NMM). Estos puntos constituyen la base de toda la red altimétrica de un proyecto de ingeniería.</p>
+<h3 id="conformación-de-un-bm">Conformación de un BM</h3>
+<p>Para garantizar que la cota no sufra variaciones por asentamientos o factores externos, los BM se materializan físicamente mediante hitos de hormigón de dimensiones normalizadas o placas de bronce empotradas en afloramientos rocosos o estructuras de concreto de alta estabilidad.</p>
+<figure data-latex-placement="H">
+<img src="Imagen/Lev1/BM.png" />
+<figcaption>BM</figcaption>
+</figure>
+<h2 id="tipos-de-nivelación">Tipos de nivelación</h2>
+<p>La nivelación geométrica o diferencial es el método principal utilizado en este proyecto. Se basa en la determinación de la diferencia de altura entre dos puntos mediante lecturas horizontales dirigidas a una mira graduada (estadal). Dependiendo de la extensión, puede ser:</p>
+<ul>
+<li><p><span>Nivelación Simple:</span> Cuando el desnivel se obtiene con una sola estación del instrumento.</p></li>
+<li><p><span>Nivelación Compuesta:</span> Cuando es necesario realizar múltiples estaciones para unir dos puntos distantes.</p></li>
+</ul>
+<h2 id="precisión-y-orden-de-las-nivelaciones">Precisión y orden de las nivelaciones</h2>
+<p>La calidad de una nivelación se mide por su error de cierre. Según la normativa técnica, la precisión se clasifica en órdenes. La tolerancia (<span class="math inline">\(T\)</span>) permitida para un circuito de tercer orden (común en ingeniería civil) se rige por: <span class="math display">\[\begin{equation}
+    T = \pm m \sqrt{K}
+\end{equation}\]</span> Donde:</p>
+<ul>
+<li><p><span class="math inline">\(m\)</span>: Coeficiente de error (mm).</p></li>
+<li><p><span class="math inline">\(K\)</span>: Distancia total recorrida en kilómetros.</p></li>
+</ul>
+<h2 id="error-y-ajustes">Error y ajustes</h2>
+<p>Debido a que toda medición física conlleva errores accidentales, el circuito de nivelación rara vez cierra perfectamente. Si el error de cierre vertical (<span class="math inline">\(e_v\)</span>) es menor o igual a la tolerancia (<span class="math inline">\(T\)</span>), se procede al ajuste de las cotas.</p>
+<h2 id="métodos-de-corrección">Métodos de corrección</h2>
+<p>Para este proyecto se aplica el rigor estadístico del <span>Método de Mínimos Cuadrados</span>, utilizando el sub-método de <span>Ecuaciones de Condición</span>. Este método garantiza que la suma de los cuadrados de las correcciones ponderadas sea mínima, proporcionando los valores más probables.</p>
+<h1 id="memoria-de-campo">MEMORIA DE CAMPO:</h1>
+<figure data-latex-placement="H">
+<div class="minipage">
+
+</div>
+<p></p>
+<div class="minipage">
+<div class="center">
+<img src="Imagen/Lev1/Uvicacion.png" />
+</div>
+</div>
+<figcaption> <span style="color: red">UBICACIÓN</span></figcaption>
+</figure>
+<figure data-latex-placement="H">
+<div class="minipage">
+
+</div>
+<p></p>
+<div class="minipage">
+<div class="center">
+<img src="Imagen/Lev1/Instalacion.png" />
+</div>
+</div>
+<figcaption> <span style="color: red">INSTALACION</span></figcaption>
+</figure>
+<figure data-latex-placement="H">
+<div class="minipage">
+
+</div>
+<p></p>
+<div class="minipage">
+<div class="center">
+<img src="Imagen/Lev1/Procedimiento.png" />
+</div>
+</div>
+<figcaption> <span style="color: red">PROCEDIMIENTO</span></figcaption>
+</figure>
+<figure data-latex-placement="H">
+<div class="minipage">
+
+</div>
+<p></p>
+<div class="minipage">
+<div class="center">
+<img src="Imagen/Lev1/Nivelacion.png" />
+</div>
+</div>
+<figcaption> <span style="color: red">NIVELACIÓN</span></figcaption>
+</figure>
+<figure data-latex-placement="H">
+<div class="minipage">
+
+</div>
+<p></p>
+<div class="minipage">
+<div class="center">
+<img src="Imagen/Lev1/Uvicacion.png" />
+</div>
+</div>
+<figcaption> <span style="color: red">SEGURIDAD</span></figcaption>
+</figure>
+<h1 id="planilla-de-campo">PLANILLA DE CAMPO</h1>
+<figure>
+<embed src="Imagen/Lev1/Salida/Lev1_1.pdf" />
+</figure>
+<figure>
+<embed src="Imagen/Lev1/Salida/Lev1_2.pdf" />
+</figure>
+<figure>
+<embed src="Imagen/Lev1/Salida/Lev1_3.pdf" />
+</figure>
+<figure>
+<embed src="Imagen/Lev1/Salida/Lev1_4.pdf" />
+</figure>
+<figure>
+<embed src="Imagen/Lev1/Salida/Lev1_5.pdf" />
+</figure>
+<figure>
+<embed src="Imagen/Lev1/Salida/Lev1_6.pdf" />
+</figure>
+<figure>
+<embed src="Imagen/Lev1/Salida/Lev1_7.pdf" />
+</figure>
+    
 </body>
 </html>
