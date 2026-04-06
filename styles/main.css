@@ -1,0 +1,516 @@
+/* ============================================================
+   DESIGN TOKENS
+   Todos los valores de color, espaciado y tipografía centralizados.
+============================================================ */
+:root {
+    /* Colores principales */
+    --c-primary:      hsl(196, 90%, 48%);
+    --c-primary-dim:  hsla(196, 90%, 48%, 0.18);
+    --c-primary-glow: hsla(196, 90%, 48%, 0.30);
+    --c-accent:       hsl(264, 80%, 66%);
+    --c-accent-dim:   hsla(264, 80%, 66%, 0.15);
+
+    /* Acento Topografía II (verde-azulado) */
+    --c-t2:           hsl(172, 70%, 44%);
+    --c-t2-dim:       hsla(172, 70%, 44%, 0.18);
+    --c-t2-glow:      hsla(172, 70%, 44%, 0.28);
+
+    /* Fondos */
+    --bg:             hsl(222, 28%, 8%);
+    --bg-card:        hsl(222, 24%, 12%);
+    --bg-hover:       hsl(222, 22%, 16%);
+
+    /* Bordes */
+    --border:         hsla(220, 30%, 55%, 0.14);
+    --border-active:  hsla(196, 90%, 48%, 0.38);
+
+    /* Textos */
+    --tx-1: hsl(220, 18%, 95%);
+    --tx-2: hsl(220, 14%, 62%);
+    --tx-3: hsl(220, 10%, 42%);
+
+    /* Misc */
+    --r-sm:  8px;
+    --r-md:  14px;
+    --r-lg:  20px;
+    --r-xl:  26px;
+    --ease:  cubic-bezier(.4, 0, .2, 1);
+}
+
+/* ============================================================
+   RESET
+============================================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--tx-1);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ============================================================
+   FONDO ESTÁTICO — sin animación para no gastar GPU cada frame
+============================================================ */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background:
+        radial-gradient(ellipse 70% 55% at 10% 15%, hsla(196, 90%, 30%, 0.16) 0%, transparent 65%),
+        radial-gradient(ellipse 55% 50% at 88% 80%, hsla(264, 80%, 40%, 0.13) 0%, transparent 65%);
+    pointer-events: none;
+}
+
+/* Grilla estática sutil */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background-image:
+        linear-gradient(hsla(196, 90%, 48%, .028) 1px, transparent 1px),
+        linear-gradient(90deg, hsla(196, 90%, 48%, .028) 1px, transparent 1px);
+    background-size: 52px 52px;
+    pointer-events: none;
+}
+
+/* ============================================================
+   LAYOUT PRINCIPAL
+============================================================ */
+.page {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 16px 64px;
+    min-height: 100vh;
+}
+
+/* ============================================================
+   HERO (cabecera)
+============================================================ */
+.hero {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-active);
+    border-radius: 99px;
+    padding: 5px 15px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--c-primary);
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+/* Punto pulsante — única animación, muy económica */
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--c-primary);
+    box-shadow: 0 0 6px var(--c-primary);
+    animation: pulse 2.4s ease-in-out infinite;
+    will-change: opacity;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: .4; }
+}
+
+.hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(26px, 5vw, 46px);
+    font-weight: 800;
+    line-height: 1.12;
+    background: linear-gradient(130deg, var(--tx-1) 25%, var(--c-primary) 70%, var(--c-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -.5px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 14px;
+    color: var(--tx-2);
+    line-height: 1.65;
+}
+
+/* ============================================================
+   TARJETA DE PERFIL — fondo sólido, sin backdrop-filter
+============================================================ */
+.profile-card {
+    width: 100%;
+    max-width: 800px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--c-primary);
+    border-radius: var(--r-xl);
+    padding: 22px 30px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 32px;
+    box-shadow: 0 6px 28px rgba(0, 0, 0, .35);
+}
+
+.avatar {
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, hsl(196, 90%, 28%), var(--c-accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 0 0 3px var(--bg), 0 0 0 4px var(--c-primary-glow);
+}
+
+.profile-info h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tag {
+    background: var(--c-primary-dim);
+    border: 1px solid hsla(196, 90%, 48%, .22);
+    border-radius: 99px;
+    padding: 2px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--c-primary);
+}
+
+/* ============================================================
+   PESTAÑAS (Topografía I / II)
+============================================================ */
+.tab-row {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--tx-2);
+    cursor: pointer;
+    transition:
+        background    .2s var(--ease),
+        border-color  .2s var(--ease),
+        color         .2s var(--ease),
+        box-shadow    .2s var(--ease);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    letter-spacing: .3px;
+}
+
+.tab-btn:hover {
+    background: var(--bg-hover);
+    color: var(--tx-1);
+}
+
+.tab-btn.active-t1 {
+    background: var(--c-primary-dim);
+    border-color: var(--border-active);
+    color: var(--c-primary);
+    box-shadow: 0 0 0 1px var(--border-active);
+}
+
+.tab-btn.active-t2 {
+    background: var(--c-t2-dim);
+    border-color: var(--c-t2-glow);
+    color: var(--c-t2);
+    box-shadow: 0 0 0 1px var(--c-t2-glow);
+}
+
+/* ============================================================
+   PANELES DE CONTENIDO
+============================================================ */
+.tab-panel {
+    display: none;
+    width: 100%;
+    max-width: 800px;
+    flex-direction: column;
+}
+
+.tab-panel.active {
+    display: flex;
+}
+
+/* Etiqueta de sección */
+.section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.section-label span {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--tx-3);
+}
+
+.section-label hr {
+    flex: 1;
+    border: none;
+    border-top: 1px solid var(--border);
+}
+
+/* ============================================================
+   ACORDEÓN — sin backdrop-filter para máximo rendimiento
+============================================================ */
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.acc-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    transition: border-color .2s var(--ease);
+}
+
+.acc-item:hover {
+    border-color: var(--border-active);
+}
+
+/* Ocultar checkbox nativo */
+.acc-toggle {
+    display: none;
+}
+
+.acc-header {
+    padding: 18px 22px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    user-select: none;
+    transition: background .15s var(--ease);
+}
+
+.acc-header:hover {
+    background: var(--bg-hover);
+}
+
+.acc-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Badge numérico */
+.num {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: var(--r-sm);
+    background: var(--c-primary-dim);
+    border: 1px solid hsla(196, 90%, 48%, .22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--c-primary);
+}
+
+/* Variante Topografía II */
+.num.t2 {
+    background: var(--c-t2-dim);
+    border-color: hsla(172, 70%, 44%, .24);
+    color: var(--c-t2);
+}
+
+.acc-header h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--tx-1);
+    line-height: 1.35;
+}
+
+/* Icono +/× */
+.acc-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    color: var(--tx-3);
+    flex-shrink: 0;
+    transition:
+        transform     .25s var(--ease),
+        color         .2s  var(--ease),
+        border-color  .2s  var(--ease);
+}
+
+.acc-toggle:checked ~ .acc-header .acc-icon {
+    transform: rotate(45deg);
+    color: var(--c-primary);
+    border-color: var(--border-active);
+}
+
+.acc-toggle:checked ~ .acc-header {
+    border-bottom: 1px solid var(--border);
+}
+
+/* Cuerpo del acordeón */
+.acc-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .35s var(--ease);
+}
+
+.acc-toggle:checked ~ .acc-body {
+    max-height: 360px;
+}
+
+/* ============================================================
+   BOTONES DE CONTENIDO
+============================================================ */
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 14px 18px 18px;
+}
+
+.cbtn {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 11px 16px;
+    background: hsla(220, 28%, 50%, .07);
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    color: var(--tx-2);
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    /* Solo transform y border-color: operaciones compositor */
+    transition:
+        transform      .18s var(--ease),
+        border-color   .18s var(--ease),
+        color          .18s var(--ease);
+}
+
+.cbtn:hover {
+    transform: translateX(5px);
+    border-color: var(--border-active);
+    color: var(--tx-1);
+}
+
+.cbtn-icon {
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.cbtn-arrow {
+    margin-left: auto;
+    color: var(--tx-3);
+    font-size: 13px;
+    transition:
+        transform .18s var(--ease),
+        color     .18s var(--ease);
+}
+
+.cbtn:hover .cbtn-arrow {
+    transform: translateX(4px);
+    color: var(--c-primary);
+}
+
+/* Acento hover para sección T2 */
+.t2-row .cbtn:hover {
+    border-color: var(--c-t2-glow);
+}
+
+.t2-row .cbtn:hover .cbtn-arrow {
+    color: var(--c-t2);
+}
+
+/* ============================================================
+   PIE DE PÁGINA
+============================================================ */
+footer {
+    margin-top: 40px;
+    font-size: 11px;
+    color: var(--tx-3);
+    text-align: center;
+}
+
+footer b {
+    color: var(--c-primary);
+    font-weight: 600;
+}
+
+/* ============================================================
+   RESPONSIVE — pantallas pequeñas
+============================================================ */
+@media (max-width: 560px) {
+    .page         { padding: 24px 12px 52px; }
+    .profile-card { flex-direction: column; align-items: flex-start; padding: 18px; }
+    .tab-btn      { font-size: 12px; padding: 10px; }
+    .acc-header h3{ font-size: 12px; }
+}
+
+/* Respeto por la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+}

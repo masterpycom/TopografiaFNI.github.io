@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Proy1</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+</head>
+<body>
+<h1 id="introducción">INTRODUCCIÓN</h1>
+<p>La nivelación de bancos de nivel es un proceso fundamental en la topografía que permite establecer el control vertical de un área de estudio. En este proyecto, se aplican métodos de nivelación geométrica para determinar cotas precisas, esenciales para el diseño y ejecución de obras civiles</p>
+<h1 id="objetivo">OBJETIVO</h1>
+<p>Establecer y ajustar las elevaciones de distintos Bancos de Nivel (BM) mediante el uso de nivelación diferencial, aplicando el método de mínimos cuadrados para la corrección de errores y garantizando la precisión requerida para el proyecto.</p>
+<h1 id="marco-teórico">MARCO TEÓRICO</h1>
+<h2 id="bancos-de-nivel">Bancos de nivel</h2>
+<figure data-latex-placement="H">
+
+<figcaption>NIVELACIÓN</figcaption>
+</figure>
+<h3 id="definición">Definición</h3>
+<p>Un Banco de Nivel (Bench Mark) es un punto de control vertical de carácter permanente o semipermanente, cuya elevación o cota es conocida con precisión respecto a un plano de referencia, generalmente el Nivel Medio del Mar (NMM). Estos puntos constituyen la base de toda la red altimétrica de un proyecto de ingeniería.</p>
+<h3 id="conformación-de-un-bm">Conformación de un BM</h3>
+<p>Para garantizar que la cota no sufra variaciones por asentamientos o factores externos, los BM se materializan físicamente mediante hitos de hormigón de dimensiones normalizadas o placas de bronce empotradas en afloramientos rocosos o estructuras de concreto de alta estabilidad.</p>
+<figure data-latex-placement="H">
+<img src="Imagen/Lev1/BM.png" />
+<figcaption>BM</figcaption>
+</figure>
+<h2 id="tipos-de-nivelación">Tipos de nivelación</h2>
+<p>La nivelación geométrica o diferencial es el método principal utilizado en este proyecto. Se basa en la determinación de la diferencia de altura entre dos puntos mediante lecturas horizontales dirigidas a una mira graduada (estadal). Dependiendo de la extensión, puede ser:</p>
+<ul>
+<li><p><span>Nivelación Simple:</span> Cuando el desnivel se obtiene con una sola estación del instrumento.</p></li>
+<li><p><span>Nivelación Compuesta:</span> Cuando es necesario realizar múltiples estaciones para unir dos puntos distantes.</p></li>
+</ul>
+<h2 id="precisión-y-orden-de-las-nivelaciones">Precisión y orden de las nivelaciones</h2>
+<p>La calidad de una nivelación se mide por su error de cierre. Según la normativa técnica, la precisión se clasifica en órdenes. La tolerancia (<span class="math inline">\(T\)</span>) permitida para un circuito de tercer orden (común en ingeniería civil) se rige por: <span class="math display">\[\begin{equation}
+    T = \pm m \sqrt{K}
+\end{equation}\]</span> Donde:</p>
+<ul>
+<li><p><span class="math inline">\(m\)</span>: Coeficiente de error (mm).</p></li>
+<li><p><span class="math inline">\(K\)</span>: Distancia total recorrida en kilómetros.</p></li>
+</ul>
+<h2 id="error-y-ajustes">Error y ajustes</h2>
+<p>Debido a que toda medición física conlleva errores accidentales, el circuito de nivelación rara vez cierra perfectamente. Si el error de cierre vertical (<span class="math inline">\(e_v\)</span>) es menor o igual a la tolerancia (<span class="math inline">\(T\)</span>), se procede al ajuste de las cotas.</p>
+<h2 id="métodos-de-corrección">Métodos de corrección</h2>
+<p>Para este proyecto se aplica el rigor estadístico del <span>Método de Mínimos Cuadrados</span>, utilizando el sub-método de <span>Ecuaciones de Condición</span>. Este método garantiza que la suma de los cuadrados de las correcciones ponderadas sea mínima, proporcionando los valores más probables.</p>
+<h1 id="memoria-de-campo">MEMORIA DE CAMPO:</h1>
+<figure data-latex-placement="H">
+<div class="minipage">
+
+</div>
+<p></p>
+<div class="minipage">
+<div class="center">
+<img src="Imagen/Lev1/Uvicacion.png" />
+</div>
+</div>
+<figcaption> <span style="color: red">UBICACIÓN</span></figcaption>
+</figure>
+<figure data-latex-placement="H">
+<div class="minipage">
+
+</div>
+<p></p>
+<div class="minipage">
+<div class="center">
+<img src="Imagen/Lev1/Instalacion.png" />
+</div>
+</div>
+<figcaption> <span style="color: red">INSTALACION</span></figcaption>
+</figure>
+<figure data-latex-placement="H">
+<div class="minipage">
+
+</div>
+<p></p>
+<div class="minipage">
+<div class="center">
+<img src="Imagen/Lev1/Procedimiento.png" />
+</div>
+</div>
+<figcaption> <span style="color: red">PROCEDIMIENTO</span></figcaption>
+</figure>
+<figure data-latex-placement="H">
+<div class="minipage">
+
+</div>
+<p></p>
+<div class="minipage">
+<div class="center">
+<img src="Imagen/Lev1/Nivelacion.png" />
+</div>
+</div>
+<figcaption> <span style="color: red">NIVELACIÓN</span></figcaption>
+</figure>
+<figure data-latex-placement="H">
+<div class="minipage">
+
+</div>
+<p></p>
+<div class="minipage">
+<div class="center">
+<img src="Imagen/Lev1/Uvicacion.png" />
+</div>
+</div>
+<figcaption> <span style="color: red">SEGURIDAD</span></figcaption>
+</figure>
+<h1 id="planilla-de-campo">PLANILLA DE CAMPO</h1>
+<figure>
+<embed src="Imagen/Lev1/Salida/Lev1_1.pdf" />
+</figure>
+<figure>
+<embed src="Imagen/Lev1/Salida/Lev1_2.pdf" />
+</figure>
+<figure>
+<embed src="Imagen/Lev1/Salida/Lev1_3.pdf" />
+</figure>
+<figure>
+<embed src="Imagen/Lev1/Salida/Lev1_4.pdf" />
+</figure>
+<figure>
+<embed src="Imagen/Lev1/Salida/Lev1_5.pdf" />
+</figure>
+<figure>
+<embed src="Imagen/Lev1/Salida/Lev1_6.pdf" />
+</figure>
+<figure>
+<embed src="Imagen/Lev1/Salida/Lev1_7.pdf" />
+</figure>
+<h1 id="cálculos">CÁLCULOS</h1>
+<h2 id="memoria-de-calculo">Memoria de calculo</h2>
+<ol>
+<li><p>Calculo de desniveles y Error medio:</p></li>
+<li><p>Cálculo de los Pesos: <span class="math display">\[P_1 \times Err_1^2 = P_2 \times Err_2^2 \qquad P_1 = 1 \qquad P_2 = \frac{P_1 \times Err_1^2}{Err_2^2}\]</span> <span class="math display">\[Desn_{prom} = \frac{\sum Desn_i \times P_i}{\sum P_i}\]</span> Tramo - (’FNI-5’, ’FNI-17’) <span class="math display">\[Em_1 = 0.261 \qquad Em_2 = 0.379 \qquad P_1 = 1\]</span> <span class="math display">\[P_2 = \frac{1 \times (0.261)^2}{(0.379)^2} = 0.476\]</span> <span class="math display">\[Desn_{prom} = \frac{1\times 0.878 + 0.476\times1.606}{1+0.476} = 1.113\]</span><span class="math display">\[P_1 \times Err_1^2 = P_2 \times Err_2^2 \qquad P_1 = 1 \qquad P_2 = \frac{P_1 \times Err_1^2}{Err_2^2}\]</span> <span class="math display">\[Desn_{prom} = \frac{\sum Desn_i \times P_i}{\sum P_i}\]</span> Tramo - (’FNI-17’, ’FNI-6’) <span class="math display">\[Em_1 = 0.915 \qquad Em_2 = 0.149 \qquad P_1 = 1\]</span> <span class="math display">\[P_2 = \frac{1 \times (0.915)^2}{(0.149)^2} = 37.459\]</span> <span class="math display">\[Desn_{prom} = \frac{1\times 1.100 + 37.459\times1.077}{1+37.459} = 1.077\]</span><span class="math display">\[P_1 \times Err_1^2 = P_2 \times Err_2^2 \qquad P_1 = 1 \qquad P_2 = \frac{P_1 \times Err_1^2}{Err_2^2}\]</span> <span class="math display">\[Desn_{prom} = \frac{\sum Desn_i \times P_i}{\sum P_i}\]</span> Tramo - (’FNI-6’, ’GLG-2’) <span class="math display">\[Em_1 = 1.000 \qquad Em_2 = 0.701 \qquad P_1 = 1\]</span> <span class="math display">\[P_2 = \frac{1 \times (1.000)^2}{(0.701)^2} = 2.038\]</span> <span class="math display">\[Desn_{prom} = \frac{1\times 1.000 + 2.038\times0.922}{1+2.038} = 0.948\]</span><span class="math display">\[P_1 \times Err_1^2 = P_2 \times Err_2^2 \qquad P_1 = 1 \qquad P_2 = \frac{P_1 \times Err_1^2}{Err_2^2}\]</span> <span class="math display">\[Desn_{prom} = \frac{\sum Desn_i \times P_i}{\sum P_i}\]</span> Tramo - (’GLG-2’, ’ELT-2’) <span class="math display">\[Em_1 = 0.174 \qquad Em_2 = 0.100 \qquad P_1 = 1\]</span> <span class="math display">\[P_2 = \frac{1 \times (0.174)^2}{(0.100)^2} = 3.058\]</span> <span class="math display">\[Desn_{prom} = \frac{1\times 1.907 + 3.058\times1.478}{1+3.058} = 1.584\]</span><span class="math display">\[P_1 \times Err_1^2 = P_2 \times Err_2^2 \qquad P_1 = 1 \qquad P_2 = \frac{P_1 \times Err_1^2}{Err_2^2}\]</span> <span class="math display">\[Desn_{prom} = \frac{\sum Desn_i \times P_i}{\sum P_i}\]</span> Tramo - (’ELT-2’, ’ELT-1’) <span class="math display">\[Em_1 = 0.650 \qquad Em_2 = 0.358 \qquad P_1 = 1\]</span> <span class="math display">\[P_2 = \frac{1 \times (0.650)^2}{(0.358)^2} = 3.306\]</span> <span class="math display">\[Desn_{prom} = \frac{1\times 1.448 + 3.306\times1.884}{1+3.306} = 1.782\]</span><span class="math display">\[P_1 \times Err_1^2 = P_2 \times Err_2^2 \qquad P_1 = 1 \qquad P_2 = \frac{P_1 \times Err_1^2}{Err_2^2}\]</span> <span class="math display">\[Desn_{prom} = \frac{\sum Desn_i \times P_i}{\sum P_i}\]</span> Tramo - (’ELT-1’, ’FNI-2’) <span class="math display">\[Em_1 = 0.085 \qquad Em_2 = 0.384 \qquad P_1 = 1\]</span> <span class="math display">\[P_2 = \frac{1 \times (0.085)^2}{(0.384)^2} = 0.049\]</span> <span class="math display">\[Desn_{prom} = \frac{1\times 1.706 + 0.049\times1.585}{1+0.049} = 1.700\]</span><span class="math display">\[P_1 \times Err_1^2 = P_2 \times Err_2^2 \qquad P_1 = 1 \qquad P_2 = \frac{P_1 \times Err_1^2}{Err_2^2}\]</span> <span class="math display">\[Desn_{prom} = \frac{\sum Desn_i \times P_i}{\sum P_i}\]</span> Tramo - (’FNI-2’, ’FNI-5’) <span class="math display">\[Em_1 = 0.515 \qquad Em_2 = 0.686 \qquad P_1 = 1\]</span> <span class="math display">\[P_2 = \frac{1 \times (0.515)^2}{(0.686)^2} = 0.564\]</span> <span class="math display">\[Desn_{prom} = \frac{1\times 1.440 + 0.564\times1.531}{1+0.564} = 1.473\]</span><span class="math display">\[P_1 \times Err_1^2 = P_2 \times Err_2^2 \qquad P_1 = 1 \qquad P_2 = \frac{P_1 \times Err_1^2}{Err_2^2}\]</span> <span class="math display">\[Desn_{prom} = \frac{\sum Desn_i \times P_i}{\sum P_i}\]</span> Tramo - (’FNI-5’, ’GLG-2’) <span class="math display">\[Em_1 = 1.810 \qquad Em_2 = 1.000 \qquad P_1 = 1\]</span> <span class="math display">\[P_2 = \frac{1 \times (1.810)^2}{(1.000)^2} = 3.278\]</span> <span class="math display">\[Desn_{prom} = \frac{1\times 1.960 + 3.278\times1.000}{1+3.278} = 1.224\]</span><span class="math display">\[P_1 \times Err_1^2 = P_2 \times Err_2^2 \qquad P_1 = 1 \qquad P_2 = \frac{P_1 \times Err_1^2}{Err_2^2}\]</span> <span class="math display">\[Desn_{prom} = \frac{\sum Desn_i \times P_i}{\sum P_i}\]</span> Tramo - (’GLG-2’, ’FNI-5’) <span class="math display">\[Em_1 = 1.000 \qquad Em_2 = 1.000 \qquad P_1 = 1\]</span> <span class="math display">\[P_2 = \frac{1 \times (1.000)^2}{(1.000)^2} = 1.000\]</span> <span class="math display">\[Desn_{prom} = \frac{1\times 1.000 + 1.000\times1.000}{1+1.000} = 1.000\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\begin{aligned}
+DH_{i-j} &amp;= \sqrt{(N_j-N_i)^2+(E_j-E_i)^2}\\
+DH_{(&#39;FNI-5&#39;, &#39;FNI-17&#39;)} &amp;= \sqrt{(8010104.908 - 8010119.206)^2 + (697040.263 - 696941.316)^2)} = 99.975\\
+DH_{(&#39;FNI-17&#39;, &#39;FNI-6&#39;)} &amp;= \sqrt{(8010119.206 - 8009985.926)^2 + (696941.316 - 696943.984)^2)} = 133.307\\
+DH_{(&#39;FNI-6&#39;, &#39;GLG-2&#39;)} &amp;= \sqrt{(8009985.926 - 8009878.525)^2 + (696943.984 - 697088.311)^2)} = 179.903\\
+DH_{(&#39;GLG-2&#39;, &#39;ELT-2&#39;)} &amp;= \sqrt{(8009878.525 - 8010012.649)^2 + (697088.311 - 697273.846)^2)} = 228.938\\
+DH_{(&#39;ELT-2&#39;, &#39;ELT-1&#39;)} &amp;= \sqrt{(8010012.649 - 8010106.858)^2 + (697273.846 - 697275.949)^2)} = 94.232\\
+DH_{(&#39;ELT-1&#39;, &#39;FNI-2&#39;)} &amp;= \sqrt{(8010106.858 - 8010104.429)^2 + (697275.949 - 697179.964)^2)} = 96.016\\
+DH_{(&#39;FNI-2&#39;, &#39;FNI-5&#39;)} &amp;= \sqrt{(8010104.429 - 8010104.908)^2 + (697179.964 - 697040.263)^2)} = 139.702\\
+DH_{(&#39;FNI-5&#39;, &#39;GLG-2&#39;)} &amp;= \sqrt{(8010104.908 - 8009878.525)^2 + (697040.263 - 697088.311)^2)} = 231.426\\
+DH_{(&#39;GLG-2&#39;, &#39;FNI-5&#39;)} &amp;= \sqrt{(8009878.525 - 8010104.908)^2 + (697088.311 - 697040.263)^2)} = 231.426\\
+\end{aligned}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[Peso = \frac{k}{DH_i} \qquad DH_{max} = 231.426\]</span> <span class="math display">\[Peso_{(&#39;FNI-5&#39;, &#39;FNI-17&#39;)} = \frac{231.426}{99.975} = 2.315\]</span> <span class="math display">\[Peso_{(&#39;FNI-17&#39;, &#39;FNI-6&#39;)} = \frac{231.426}{133.307} = 1.736\]</span> <span class="math display">\[Peso_{(&#39;FNI-6&#39;, &#39;GLG-2&#39;)} = \frac{231.426}{179.903} = 1.286\]</span> <span class="math display">\[Peso_{(&#39;GLG-2&#39;, &#39;ELT-2&#39;)} = \frac{231.426}{228.938} = 1.011\]</span> <span class="math display">\[Peso_{(&#39;ELT-2&#39;, &#39;ELT-1&#39;)} = \frac{231.426}{94.232} = 2.456\]</span> <span class="math display">\[Peso_{(&#39;ELT-1&#39;, &#39;FNI-2&#39;)} = \frac{231.426}{96.016} = 2.410\]</span> <span class="math display">\[Peso_{(&#39;FNI-2&#39;, &#39;FNI-5&#39;)} = \frac{231.426}{139.702} = 1.657\]</span> <span class="math display">\[Peso_{(&#39;FNI-5&#39;, &#39;GLG-2&#39;)} = \frac{231.426}{231.426} = 1.000\]</span> <span class="math display">\[Peso_{(&#39;GLG-2&#39;, &#39;FNI-5&#39;)} = \frac{231.426}{231.426} = 1.000\]</span></p></li>
+<li><p>Planteamiento de las ecuaciones de condición:</p></li>
+<li><p>Establecimiento de la Ecuación Fundamental: <span class="math display">\[U = \sum(P_i\times V_i) - \sum (2\times C_i^2 \times Ec.Cond.)\]</span><span class="math display">\[U_{(&#39;FNI-5&#39;, &#39;FNI-17&#39;)} = 2.315 V_{1}^{2} - 2\times C_{1} \times(V_{1} + 1.113)\]</span><span class="math display">\[U_{(&#39;FNI-17&#39;, &#39;FNI-6&#39;)} = 1.736 V_{2}^{2} - 2\times C_{2} \times(V_{2} + 1.077)\]</span><span class="math display">\[U_{(&#39;FNI-6&#39;, &#39;GLG-2&#39;)} = 1.286 V_{3}^{2} - 2\times C_{3} \times(V_{3} + 0.948)\]</span><span class="math display">\[U_{(&#39;GLG-2&#39;, &#39;ELT-2&#39;)} = 1.011 V_{4}^{2} - 2\times C_{4} \times(V_{4} - 1.224)\]</span><span class="math display">\[U_{(&#39;ELT-2&#39;, &#39;ELT-1&#39;)} = 2.456 V_{4}^{2} - 2\times C_{5} \times(V_{4} + 1.224)\]</span><span class="math display">\[U_{(&#39;ELT-1&#39;, &#39;FNI-2&#39;)} = 2.41 V_{5}^{2} - 2\times C_{6} \times(V_{5} + 1.584)\]</span><span class="math display">\[U_{(&#39;FNI-2&#39;, &#39;FNI-5&#39;)} = 1.657 V_{6}^{2} - 2\times C_{7} \times(V_{6} - 1.782)\]</span><span class="math display">\[U_{(&#39;FNI-5&#39;, &#39;GLG-2&#39;)} = 1.0 V_{7}^{2} - 2\times C_{8} \times(V_{7} + 1.7)\]</span><span class="math display">\[U_{(&#39;GLG-2&#39;, &#39;FNI-5&#39;)} = 1.0 V_{8}^{2} - 2\times C_{9} \times(V_{8} + 1.473)\]</span></p></li>
+<li><p>Cálculo de las Ecuaciones de Correlación:</p></li>
+<li><p>Cálculo de las Ecuaciones Normales:</p></li>
+<li><p>Cálculo de las Correcciones:</p></li>
+<li><p>Cálculo de los Desniveles corregidos:</p></li>
+<li><p>Cálculo de las Elevaciones:</p></li>
+</ol>
+<h2 id="resumen-de-resutados">RESUMEN DE RESUTADOS:</h2>
+<div id="tab:muestra">
+<table>
+<caption>Tabular</caption>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="math inline">\(Pts1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts3\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts4\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts5\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts6\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts7\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts8\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts9\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts10\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts11\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts12\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts13\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts14\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0.878</td>
+<td style="text-align: center;">0.922</td>
+<td style="text-align: center;">1.077</td>
+<td style="text-align: center;">1.606</td>
+<td style="text-align: center;">1.531</td>
+<td style="text-align: center;">1.585</td>
+<td style="text-align: center;">1.440</td>
+<td style="text-align: center;">1.884</td>
+<td style="text-align: center;">1.706</td>
+<td style="text-align: center;">1.478</td>
+<td style="text-align: center;">1.100</td>
+<td style="text-align: center;">1.960</td>
+<td style="text-align: center;">1.907</td>
+<td style="text-align: center;">1.448</td>
+</tr>
+<tr>
+<td style="text-align: center;">1.130</td>
+<td style="text-align: center;">1.404</td>
+<td style="text-align: center;">0.698</td>
+<td style="text-align: center;">1.575</td>
+<td style="text-align: center;">1.023</td>
+<td style="text-align: center;">1.107</td>
+<td style="text-align: center;">1.462</td>
+<td style="text-align: center;">1.662</td>
+<td style="text-align: center;">1.064</td>
+<td style="text-align: center;">0.755</td>
+<td style="text-align: center;">1.188</td>
+<td style="text-align: center;">2.262</td>
+<td style="text-align: center;">1.557</td>
+<td style="text-align: center;">1.067</td>
+</tr>
+<tr>
+<td style="text-align: center;">1.458</td>
+<td style="text-align: center;">1.392</td>
+<td style="text-align: center;">0.865</td>
+<td style="text-align: center;">1.663</td>
+<td style="text-align: center;">1.220</td>
+<td style="text-align: center;">1.534</td>
+<td style="text-align: center;">1.442</td>
+<td style="text-align: center;">1.680</td>
+<td style="text-align: center;">0.595</td>
+<td style="text-align: center;">1.099</td>
+<td style="text-align: center;">1.766</td>
+<td style="text-align: center;">1.796</td>
+<td style="text-align: center;">0.820</td>
+<td style="text-align: center;">1.664</td>
+</tr>
+<tr>
+<td style="text-align: center;">1.244</td>
+<td style="text-align: center;">1.385</td>
+<td style="text-align: center;">0.719</td>
+<td style="text-align: center;">1.706</td>
+<td style="text-align: center;">0.958</td>
+<td style="text-align: center;">1.494</td>
+<td style="text-align: center;">1.594</td>
+<td style="text-align: center;">1.470</td>
+<td style="text-align: center;">0.131</td>
+<td style="text-align: center;">1.696</td>
+<td style="text-align: center;">1.488</td>
+<td style="text-align: center;">1.587</td>
+<td style="text-align: center;">1.558</td>
+<td style="text-align: center;">1.578</td>
+</tr>
+<tr>
+<td style="text-align: center;">1.749</td>
+<td style="text-align: center;">1.058</td>
+<td style="text-align: center;">0.728</td>
+<td style="text-align: center;">1.445</td>
+<td style="text-align: center;">0.783</td>
+<td style="text-align: center;">1.157</td>
+<td style="text-align: center;">1.672</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1.292</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1.915</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1.085</td>
+<td style="text-align: center;">1.288</td>
+</tr>
+<tr>
+<td style="text-align: center;">1.358</td>
+<td style="text-align: center;">1.125</td>
+<td style="text-align: center;">0.900</td>
+<td style="text-align: center;">1.490</td>
+<td style="text-align: center;">1.417</td>
+<td style="text-align: center;">1.597</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1.327</td>
+<td style="text-align: center;">1.175</td>
+</tr>
+<tr>
+<td style="text-align: center;">1.581</td>
+<td style="text-align: center;">1.200</td>
+<td style="text-align: center;">0.620</td>
+<td style="text-align: center;">0.875</td>
+<td style="text-align: center;">1.417</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1.573</td>
+<td style="text-align: center;">1.680</td>
+</tr>
+<tr>
+<td style="text-align: center;">2.017</td>
+<td style="text-align: center;">0.987</td>
+<td style="text-align: center;">0.580</td>
+<td style="text-align: center;">1.177</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1.324</td>
+<td style="text-align: center;">1.014</td>
+</tr>
+<tr>
+<td style="text-align: center;">2.091</td>
+<td style="text-align: center;">0.728</td>
+<td style="text-align: center;">0.688</td>
+<td style="text-align: center;">1.348</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1.109</td>
+<td style="text-align: center;">1.286</td>
+</tr>
+<tr>
+<td style="text-align: center;">1.622</td>
+<td style="text-align: center;">1.290</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1.503</td>
+<td style="text-align: center;">1.527</td>
+</tr>
+<tr>
+<td style="text-align: center;">1.768</td>
+<td style="text-align: center;">0.975</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1.770</td>
+<td style="text-align: center;">1.485</td>
+</tr>
+<tr>
+<td style="text-align: center;">1.858</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1.253</td>
+<td style="text-align: center;">1.232</td>
+</tr>
+<tr>
+<td style="text-align: center;">1.507</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1.557</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">1.635</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tab:muestra">
+<table>
+<caption>Tabular</caption>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="math inline">\(Pts1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts3\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts4\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts5\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts6\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts7\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts8\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts9\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts10\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts11\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts12\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts13\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Pts14\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0.137</td>
+<td style="text-align: center;">0.981</td>
+<td style="text-align: center;">0.045</td>
+<td style="text-align: center;">0.287</td>
+<td style="text-align: center;">0.941</td>
+<td style="text-align: center;">0.295</td>
+<td style="text-align: center;">0.530</td>
+<td style="text-align: center;">0.256</td>
+<td style="text-align: center;">0.014</td>
+<td style="text-align: center;">0.020</td>
+<td style="text-align: center;">1.674</td>
+<td style="text-align: center;">6.556</td>
+<td style="text-align: center;">0.061</td>
+<td style="text-align: center;">0.845</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.015</td>
+<td style="text-align: center;">0.443</td>
+<td style="text-align: center;">0.014</td>
+<td style="text-align: center;">0.055</td>
+<td style="text-align: center;">0.159</td>
+<td style="text-align: center;">0.211</td>
+<td style="text-align: center;">0.067</td>
+<td style="text-align: center;">0.411</td>
+<td style="text-align: center;">0.027</td>
+<td style="text-align: center;">0.002</td>
+<td style="text-align: center;">1.777</td>
+<td style="text-align: center;">4.924</td>
+<td style="text-align: center;">0.718</td>
+<td style="text-align: center;">0.391</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.003</td>
+<td style="text-align: center;">1.616</td>
+<td style="text-align: center;">0.001</td>
+<td style="text-align: center;">0.216</td>
+<td style="text-align: center;">0.092</td>
+<td style="text-align: center;">0.228</td>
+<td style="text-align: center;">0.487</td>
+<td style="text-align: center;">0.248</td>
+<td style="text-align: center;">0.001</td>
+<td style="text-align: center;">0.010</td>
+<td style="text-align: center;">2.239</td>
+<td style="text-align: center;">4.036</td>
+<td style="text-align: center;">0.339</td>
+<td style="text-align: center;">0.206</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.224</td>
+<td style="text-align: center;">1.484</td>
+<td style="text-align: center;">0.005</td>
+<td style="text-align: center;">0.002</td>
+<td style="text-align: center;">0.060</td>
+<td style="text-align: center;">0.322</td>
+<td style="text-align: center;">0.142</td>
+<td style="text-align: center;">0.523</td>
+<td style="text-align: center;">0.012</td>
+<td style="text-align: center;">0.018</td>
+<td style="text-align: center;">2.354</td>
+<td style="text-align: center;">1.209</td>
+<td style="text-align: center;">1.018</td>
+<td style="text-align: center;">0.325</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.013</td>
+<td style="text-align: center;">0.949</td>
+<td style="text-align: center;">0.068</td>
+<td style="text-align: center;">0.044</td>
+<td style="text-align: center;">0.220</td>
+<td style="text-align: center;">0.175</td>
+<td style="text-align: center;">0.074</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.015</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4.930</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.930</td>
+<td style="text-align: center;">0.245</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.004</td>
+<td style="text-align: center;">0.022</td>
+<td style="text-align: center;">0.008</td>
+<td style="text-align: center;">0.001</td>
+<td style="text-align: center;">0.184</td>
+<td style="text-align: center;">1.163</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1.044</td>
+<td style="text-align: center;">0.246</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.241</td>
+<td style="text-align: center;">0.304</td>
+<td style="text-align: center;">0.194</td>
+<td style="text-align: center;">0.096</td>
+<td style="text-align: center;">0.534</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1.379</td>
+<td style="text-align: center;">0.616</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.013</td>
+<td style="text-align: center;">0.845</td>
+<td style="text-align: center;">0.181</td>
+<td style="text-align: center;">1.283</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.641</td>
+<td style="text-align: center;">0.528</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.051</td>
+<td style="text-align: center;">0.017</td>
+<td style="text-align: center;">0.208</td>
+<td style="text-align: center;">0.067</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.173</td>
+<td style="text-align: center;">1.342</td>
+</tr>
+<tr>
+<td style="text-align: center;">1.269</td>
+<td style="text-align: center;">0.263</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.252</td>
+<td style="text-align: center;">0.747</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.314</td>
+<td style="text-align: center;">0.000</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.198</td>
+<td style="text-align: center;">1.122</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.326</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.242</td>
+<td style="text-align: center;">0.374</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.459</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">1.152</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">0.048</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tab:muestra">
+<table>
+<caption>Tabular</caption>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="math inline">\(Eq=0\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(V_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(C_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(V_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Desn_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Elev_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(- 2.0 C_{1} + 4.63 V_{1} = 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.432 C_{1}\)</span></td>
+<td style="text-align: center;">-2.576</td>
+<td style="text-align: center;">-1.113</td>
+<td style="text-align: center;">-0.2345</td>
+<td style="text-align: center;">3782</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(- 2.0 C_{2} + 3.472 V_{2} = 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.576 C_{2}\)</span></td>
+<td style="text-align: center;">-1.870</td>
+<td style="text-align: center;">-1.077</td>
+<td style="text-align: center;">0.02300</td>
+<td style="text-align: center;">3782</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(- 2.0 C_{3} + 2.573 V_{3} = 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.7774 C_{3}\)</span></td>
+<td style="text-align: center;">-1.219</td>
+<td style="text-align: center;">-0.9480</td>
+<td style="text-align: center;">0.05200</td>
+<td style="text-align: center;">3782</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(- 2.0 C_{4} + 2.022 V_{4} = 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.9893 C_{4}\)</span></td>
+<td style="text-align: center;">1.237</td>
+<td style="text-align: center;">1.224</td>
+<td style="text-align: center;">3.131</td>
+<td style="text-align: center;">3785</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(- 2.0 C_{5} + 4.912 V_{4} = 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.4072 C_{5}\)</span></td>
+<td style="text-align: center;">-3.006</td>
+<td style="text-align: center;">-1.224</td>
+<td style="text-align: center;">0.2240</td>
+<td style="text-align: center;">3786</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(- 2.0 C_{6} + 4.821 V_{5} = 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.4149 C_{6}\)</span></td>
+<td style="text-align: center;">-3.818</td>
+<td style="text-align: center;">-1.584</td>
+<td style="text-align: center;">0.1220</td>
+<td style="text-align: center;">3786</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(- 2.0 C_{7} + 3.313 V_{6} = 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0.6037 C_{7}\)</span></td>
+<td style="text-align: center;">2.952</td>
+<td style="text-align: center;">1.782</td>
+<td style="text-align: center;">3.222</td>
+<td style="text-align: center;">3789</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(- 2.0 C_{8} + 2.0 V_{7} = 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(C_{8}\)</span></td>
+<td style="text-align: center;">-1.700</td>
+<td style="text-align: center;">-1.700</td>
+<td style="text-align: center;">0.2595</td>
+<td style="text-align: center;">3789</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(- 2.0 C_{9} + 2.0 V_{8} = 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(C_{9}\)</span></td>
+<td style="text-align: center;">-1.473</td>
+<td style="text-align: center;">-1.473</td>
+<td style="text-align: center;">-0.4730</td>
+<td style="text-align: center;">3789</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="conclusiones-y-recomendaciones">CONCLUSIONES Y RECOMENDACIONES</h1>
+<p>El ajuste de mínimos cuadrados optimizó la red mediante pesos por distancia, logrando una cota de 3788.794 m y manteniendo los errores controlados. Este método permitió absorber sistemáticamente las discrepancias.<br />
+Para mejorar los resultados, se debe revisar la nivelación en tramos extensos (donde el <span class="math inline">\(Em\)</span> llegó a <span class="math inline">\(1.810\)</span>) y verificar la estabilidad de los bancos FNI y GLG. Equilibrar las distancias horizontales será clave para que las correcciones (<span class="math inline">\(V_i\)</span>) se mantengan dentro de la tolerancia.</p>
+<h1 id="bibliografía">BIBLIOGRAFÍA</h1>
+</body>
+</html>

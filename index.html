@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio de Topografía I y II – Franz Grover Trujillano Choque. Informes técnicos de levantamientos topográficos. UMSS.">
+    <title>Topografía – FraGroTruCho</title>
+
+    <!-- Google Fonts (carga asíncrona para no bloquear render) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap"
+          rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap"
+              rel="stylesheet">
+    </noscript>
+
+    <!-- Hoja de estilos principal -->
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<div class="page">
+
+    <!-- ══ HERO ══════════════════════════════════════════════════ -->
+    <header class="hero">
+        <div class="hero-badge">
+            <span class="dot"></span>
+            CIV &nbsp;·&nbsp; Portafolio Topográfico
+        </div>
+        <h1>TOPOGRAFÍA</h1>
+        <p>Informes técnicos de levantamientos — Universidad xxxxx</p>
+    </header>
+
+    <!-- ══ PERFIL ════════════════════════════════════════════════ -->
+    <div class="profile-card" role="region" aria-label="Datos del estudiante">
+        <div class="avatar" aria-hidden="true">🎓</div>
+        <div class="profile-info">
+            <h2>TRUJILLANO CHOQUE FRANZ GROVER</h2>
+            <div class="tags">
+                <span class="tag">📚 Paralelo B</span>
+                <span class="tag">🏛️ Ing. Civil</span>
+                <span class="tag">📐 Topografía I &amp; II</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══ PESTAÑAS ══════════════════════════════════════════════ -->
+    <div class="tab-row" role="tablist">
+        <button id="tab-t1"
+                class="tab-btn active-t1"
+                role="tab"
+                aria-selected="true"
+                aria-controls="panel-t1"
+                onclick="switchTab('t1')">
+            📐 Topografía I
+        </button>
+        <button id="tab-t2"
+                class="tab-btn"
+                role="tab"
+                aria-selected="false"
+                aria-controls="panel-t2"
+                onclick="switchTab('t2')">
+            🗺️ Topografía II
+        </button>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         PANEL — TOPOGRAFÍA I  (carpeta: TopoI/LevN/)
+    ════════════════════════════════════════════════════════════ -->
+    <section id="panel-t1" class="tab-panel active" role="tabpanel" aria-labelledby="tab-t1">
+
+        <div class="section-label">
+            <span>Levantamientos – Topografía I</span>
+            <hr>
+        </div>
+
+        <div class="accordion" role="list">
+
+            <!-- Lev 1 -->
+            <div class="acc-item" role="listitem">
+                <input type="checkbox" id="t1a1" class="acc-toggle">
+                <label for="t1a1" class="acc-header">
+                    <div class="acc-left">
+                        <div class="num">01</div>
+                        <h3>Levantamiento con Cinta Jalón — Informe N.º 1</h3>
+                    </div>
+                    <span class="acc-icon">+</span>
+                </label>
+                <div class="acc-body">
+                    <div class="btn-group">
+                        <a href="TopoI/Lev1/Estudios1.html" class="cbtn" id="t1-e1">
+                            <span class="cbtn-icon">📄</span> Estudios preliminares
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoI/Lev1/Calculos1.html" class="cbtn" id="t1-c1">
+                            <span class="cbtn-icon">🔢</span> Cálculos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoI/Lev1/Planos1.html" class="cbtn" id="t1-p1">
+                            <span class="cbtn-icon">🗺️</span> Planos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lev 2 -->
+            <div class="acc-item" role="listitem">
+                <input type="checkbox" id="t1a2" class="acc-toggle">
+                <label for="t1a2" class="acc-header">
+                    <div class="acc-left">
+                        <div class="num">02</div>
+                        <h3>Levantamiento Brújula-Cinta — Informe N.º 2</h3>
+                    </div>
+                    <span class="acc-icon">+</span>
+                </label>
+                <div class="acc-body">
+                    <div class="btn-group">
+                        <a href="TopoI/Lev2/Estudios2.html" class="cbtn" id="t1-e2">
+                            <span class="cbtn-icon">📄</span> Estudios preliminares
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoI/Lev2/Calculos2.html" class="cbtn" id="t1-c2">
+                            <span class="cbtn-icon">🔢</span> Cálculos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoI/Lev2/Planos2.html" class="cbtn" id="t1-p2">
+                            <span class="cbtn-icon">🗺️</span> Planos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lev 3 -->
+            <div class="acc-item" role="listitem">
+                <input type="checkbox" id="t1a3" class="acc-toggle">
+                <label for="t1a3" class="acc-header">
+                    <div class="acc-left">
+                        <div class="num">03</div>
+                        <h3>Levantamiento Teodolito-Cinta — Informe N.º 3</h3>
+                    </div>
+                    <span class="acc-icon">+</span>
+                </label>
+                <div class="acc-body">
+                    <div class="btn-group">
+                        <a href="TopoI/Lev3/Estudios3.html" class="cbtn" id="t1-e3">
+                            <span class="cbtn-icon">📄</span> Estudios preliminares
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoI/Lev3/Calculos3.html" class="cbtn" id="t1-c3">
+                            <span class="cbtn-icon">🔢</span> Cálculos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoI/Lev3/Planos3.html" class="cbtn" id="t1-p3">
+                            <span class="cbtn-icon">🗺️</span> Planos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lev 4 — tiene datos reales -->
+            <div class="acc-item" role="listitem">
+                <input type="checkbox" id="t1a4" class="acc-toggle">
+                <label for="t1a4" class="acc-header">
+                    <div class="acc-left">
+                        <div class="num">04</div>
+                        <h3>Levantamiento Topográfico "Taquimetría" — Informe N.º 4</h3>
+                    </div>
+                    <span class="acc-icon">+</span>
+                </label>
+                <div class="acc-body">
+                    <div class="btn-group">
+                        <a href="TopoI/Lev4/Estudios4.html" class="cbtn" id="t1-e4">
+                            <span class="cbtn-icon">📄</span> Estudios preliminares
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoI/Lev4/Calculos4.html" class="cbtn" id="t1-c4">
+                            <span class="cbtn-icon">🔢</span> Cálculos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoI/Lev4/Planos4.html" class="cbtn" id="t1-p4">
+                            <span class="cbtn-icon">🗺️</span> Planos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lev 5 -->
+            <div class="acc-item" role="listitem">
+                <input type="checkbox" id="t1a5" class="acc-toggle">
+                <label for="t1a5" class="acc-header">
+                    <div class="acc-left">
+                        <div class="num">05</div>
+                        <h3>Levantamiento Topográfico — Informe N.º 5</h3>
+                    </div>
+                    <span class="acc-icon">+</span>
+                </label>
+                <div class="acc-body">
+                    <div class="btn-group">
+                        <a href="TopoI/Lev5/Estudios5.html" class="cbtn" id="t1-e5">
+                            <span class="cbtn-icon">📄</span> Estudios preliminares
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoI/Lev5/Calculos5.html" class="cbtn" id="t1-c5">
+                            <span class="cbtn-icon">🔢</span> Cálculos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoI/Lev5/Planos5.html" class="cbtn" id="t1-p5">
+                            <span class="cbtn-icon">🗺️</span> Planos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lev 6 -->
+            <div class="acc-item" role="listitem">
+                <input type="checkbox" id="t1a6" class="acc-toggle">
+                <label for="t1a6" class="acc-header">
+                    <div class="acc-left">
+                        <div class="num">06</div>
+                        <h3>Levantamiento Topográfico — Informe N.º 6</h3>
+                    </div>
+                    <span class="acc-icon">+</span>
+                </label>
+                <div class="acc-body">
+                    <div class="btn-group">
+                        <a href="TopoI/Lev6/Estudios6.html" class="cbtn" id="t1-e6">
+                            <span class="cbtn-icon">📄</span> Estudios preliminares
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoI/Lev6/Calculos6.html" class="cbtn" id="t1-c6">
+                            <span class="cbtn-icon">🔢</span> Cálculos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoI/Lev6/Planos6.html" class="cbtn" id="t1-p6">
+                            <span class="cbtn-icon">🗺️</span> Planos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lev 7 — tiene datos reales -->
+            <div class="acc-item" role="listitem">
+                <input type="checkbox" id="t1a7" class="acc-toggle">
+                <label for="t1a7" class="acc-header">
+                    <div class="acc-left">
+                        <div class="num">07</div>
+                        <h3>Levantamiento Topográfico "Volúmenes" — Informe N.º 7</h3>
+                    </div>
+                    <span class="acc-icon">+</span>
+                </label>
+                <div class="acc-body">
+                    <div class="btn-group">
+                        <a href="TopoI/Lev7/Estudios7.html" class="cbtn" id="t1-e7">
+                            <span class="cbtn-icon">📄</span> Estudios preliminares
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoI/Lev7/Calculos7.html" class="cbtn" id="t1-c7">
+                            <span class="cbtn-icon">🔢</span> Cálculos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoI/Lev7/Planos7.html" class="cbtn" id="t1-p7">
+                            <span class="cbtn-icon">🗺️</span> Planos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lev 8 -->
+            <div class="acc-item" role="listitem">
+                <input type="checkbox" id="t1a8" class="acc-toggle">
+                <label for="t1a8" class="acc-header">
+                    <div class="acc-left">
+                        <div class="num">08</div>
+                        <h3>Levantamiento Topográfico — Informe N.º 8</h3>
+                    </div>
+                    <span class="acc-icon">+</span>
+                </label>
+                <div class="acc-body">
+                    <div class="btn-group">
+                        <a href="TopoI/Lev8/Estudios8.html" class="cbtn" id="t1-e8">
+                            <span class="cbtn-icon">📄</span> Estudios preliminares
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoI/Lev8/Calculos8.html" class="cbtn" id="t1-c8">
+                            <span class="cbtn-icon">🔢</span> Cálculos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoI/Lev8/Planos8.html" class="cbtn" id="t1-p8">
+                            <span class="cbtn-icon">🗺️</span> Planos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /accordion T1 -->
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         PANEL — TOPOGRAFÍA II  (carpeta: TopoII/LevN/)
+    ════════════════════════════════════════════════════════════ -->
+    <section id="panel-t2" class="tab-panel" role="tabpanel" aria-labelledby="tab-t2">
+
+        <div class="section-label">
+            <span>Levantamientos – Topografía II</span>
+            <hr>
+        </div>
+
+        <div class="accordion t2-row" role="list">
+
+            <!-- Lev 1 -->
+            <div class="acc-item" role="listitem">
+                <input type="checkbox" id="t2a1" class="acc-toggle">
+                <label for="t2a1" class="acc-header">
+                    <div class="acc-left">
+                        <div class="num t2">01</div>
+                        <h3>Levantamiento Topográfico — Informe N.º 1</h3>
+                    </div>
+                    <span class="acc-icon">+</span>
+                </label>
+                <div class="acc-body">
+                    <div class="btn-group">
+                        <a href="TopoII/Lev1/Estudios1.html" class="cbtn" id="t2-e1">
+                            <span class="cbtn-icon">📄</span> Estudios preliminares
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoII/Lev1/Calculos1.html" class="cbtn" id="t2-c1">
+                            <span class="cbtn-icon">🔢</span> Cálculos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoII/Lev1/Planos1.html" class="cbtn" id="t2-p1">
+                            <span class="cbtn-icon">🗺️</span> Planos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lev 2 -->
+            <div class="acc-item" role="listitem">
+                <input type="checkbox" id="t2a2" class="acc-toggle">
+                <label for="t2a2" class="acc-header">
+                    <div class="acc-left">
+                        <div class="num t2">02</div>
+                        <h3>Levantamiento Topográfico — Informe N.º 2</h3>
+                    </div>
+                    <span class="acc-icon">+</span>
+                </label>
+                <div class="acc-body">
+                    <div class="btn-group">
+                        <a href="TopoII/Lev2/Estudios2.html" class="cbtn" id="t2-e2">
+                            <span class="cbtn-icon">📄</span> Estudios preliminares
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoII/Lev2/Calculos2.html" class="cbtn" id="t2-c2">
+                            <span class="cbtn-icon">🔢</span> Cálculos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoII/Lev2/Planos2.html" class="cbtn" id="t2-p2">
+                            <span class="cbtn-icon">🗺️</span> Planos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lev 3 -->
+            <div class="acc-item" role="listitem">
+                <input type="checkbox" id="t2a3" class="acc-toggle">
+                <label for="t2a3" class="acc-header">
+                    <div class="acc-left">
+                        <div class="num t2">03</div>
+                        <h3>Levantamiento Topográfico — Informe N.º 3</h3>
+                    </div>
+                    <span class="acc-icon">+</span>
+                </label>
+                <div class="acc-body">
+                    <div class="btn-group">
+                        <a href="TopoII/Lev3/Estudios3.html" class="cbtn" id="t2-e3">
+                            <span class="cbtn-icon">📄</span> Estudios preliminares
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoII/Lev3/Calculos3.html" class="cbtn" id="t2-c3">
+                            <span class="cbtn-icon">🔢</span> Cálculos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoII/Lev3/Planos3.html" class="cbtn" id="t2-p3">
+                            <span class="cbtn-icon">🗺️</span> Planos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lev 4 -->
+            <div class="acc-item" role="listitem">
+                <input type="checkbox" id="t2a4" class="acc-toggle">
+                <label for="t2a4" class="acc-header">
+                    <div class="acc-left">
+                        <div class="num t2">04</div>
+                        <h3>Levantamiento Topográfico — Informe N.º 4</h3>
+                    </div>
+                    <span class="acc-icon">+</span>
+                </label>
+                <div class="acc-body">
+                    <div class="btn-group">
+                        <a href="TopoII/Lev4/Estudios4.html" class="cbtn" id="t2-e4">
+                            <span class="cbtn-icon">📄</span> Estudios preliminares
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoII/Lev4/Calculos4.html" class="cbtn" id="t2-c4">
+                            <span class="cbtn-icon">🔢</span> Cálculos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoII/Lev4/Planos4.html" class="cbtn" id="t2-p4">
+                            <span class="cbtn-icon">🗺️</span> Planos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lev 5 -->
+            <div class="acc-item" role="listitem">
+                <input type="checkbox" id="t2a5" class="acc-toggle">
+                <label for="t2a5" class="acc-header">
+                    <div class="acc-left">
+                        <div class="num t2">05</div>
+                        <h3>Levantamiento Topográfico — Informe N.º 5</h3>
+                    </div>
+                    <span class="acc-icon">+</span>
+                </label>
+                <div class="acc-body">
+                    <div class="btn-group">
+                        <a href="TopoII/Lev5/Estudios5.html" class="cbtn" id="t2-e5">
+                            <span class="cbtn-icon">📄</span> Estudios preliminares
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoII/Lev5/Calculos5.html" class="cbtn" id="t2-c5">
+                            <span class="cbtn-icon">🔢</span> Cálculos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoII/Lev5/Planos5.html" class="cbtn" id="t2-p5">
+                            <span class="cbtn-icon">🗺️</span> Planos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lev 6 -->
+            <div class="acc-item" role="listitem">
+                <input type="checkbox" id="t2a6" class="acc-toggle">
+                <label for="t2a6" class="acc-header">
+                    <div class="acc-left">
+                        <div class="num t2">06</div>
+                        <h3>Levantamiento Topográfico — Informe N.º 6</h3>
+                    </div>
+                    <span class="acc-icon">+</span>
+                </label>
+                <div class="acc-body">
+                    <div class="btn-group">
+                        <a href="TopoII/Lev6/Estudios6.html" class="cbtn" id="t2-e6">
+                            <span class="cbtn-icon">📄</span> Estudios preliminares
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoII/Lev6/Calculos6.html" class="cbtn" id="t2-c6">
+                            <span class="cbtn-icon">🔢</span> Cálculos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoII/Lev6/Planos6.html" class="cbtn" id="t2-p6">
+                            <span class="cbtn-icon">🗺️</span> Planos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lev 7 -->
+            <div class="acc-item" role="listitem">
+                <input type="checkbox" id="t2a7" class="acc-toggle">
+                <label for="t2a7" class="acc-header">
+                    <div class="acc-left">
+                        <div class="num t2">07</div>
+                        <h3>Levantamiento Topográfico — Informe N.º 7</h3>
+                    </div>
+                    <span class="acc-icon">+</span>
+                </label>
+                <div class="acc-body">
+                    <div class="btn-group">
+                        <a href="TopoII/Lev7/Estudios7.html" class="cbtn" id="t2-e7">
+                            <span class="cbtn-icon">📄</span> Estudios preliminares
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoII/Lev7/Calculos7.html" class="cbtn" id="t2-c7">
+                            <span class="cbtn-icon">🔢</span> Cálculos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoII/Lev7/Planos7.html" class="cbtn" id="t2-p7">
+                            <span class="cbtn-icon">🗺️</span> Planos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lev 8 -->
+            <div class="acc-item" role="listitem">
+                <input type="checkbox" id="t2a8" class="acc-toggle">
+                <label for="t2a8" class="acc-header">
+                    <div class="acc-left">
+                        <div class="num t2">08</div>
+                        <h3>Levantamiento Topográfico — Informe N.º 8</h3>
+                    </div>
+                    <span class="acc-icon">+</span>
+                </label>
+                <div class="acc-body">
+                    <div class="btn-group">
+                        <a href="TopoII/Lev8/Estudios8.html" class="cbtn" id="t2-e8">
+                            <span class="cbtn-icon">📄</span> Estudios preliminares
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoII/Lev8/Calculos8.html" class="cbtn" id="t2-c8">
+                            <span class="cbtn-icon">🔢</span> Cálculos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                        <a href="TopoII/Lev8/Planos8.html" class="cbtn" id="t2-p8">
+                            <span class="cbtn-icon">🗺️</span> Planos técnicos
+                            <span class="cbtn-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /accordion T2 -->
+    </section>
+
+    <!-- ══ PIE DE PÁGINA ══════════════════════════════════════════ -->
+    <footer>
+        <p>Topografía I &amp; II &nbsp;·&nbsp; <b>UMSS</b> &nbsp;·&nbsp; CIV:2213-2214 &nbsp;·&nbsp; 2026</p>
+    </footer>
+
+</div><!-- /page -->
+
+<!-- Script principal (al final del body para no bloquear el render) -->
+<script src="scripts/main.js"></script>
+
+</body>
+</html>
